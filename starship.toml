@@ -1,6 +1,6 @@
 
 
-# Shapes                           
+# Shapes                           
 #u'\uE0A2'
 
 #$username\
@@ -8,16 +8,15 @@
 #colors
 
 format = """
-[ ](bg:#33658A)\
-[ ](bg:#33658A)\
+[ ](fg:#067e67)\
+[  ](bg:#067e67)\
+[](fg:#067e67)\
 $hostname\
-[](bg:#16A085 fg:#33658A)\
 $localip\
 $shlvl\
 $singularity\
 $kubernetes\
 $directory\
-[](fg:#16A085)\
 $vcsh\
 $hg_branch\
 $docker_context\
@@ -66,6 +65,7 @@ $azure\
 $env_var\
 $crystal\
 $custom\
+$fill\
 $git_branch\
 $git_commit\
 $git_state\
@@ -76,7 +76,7 @@ $cmd_duration\
 $jobs\
 $battery\
 $status\
-[ \n ❯ ](fg:#33658A)\
+[\n ❯ ](fg:#067e67)\
 $shell"""
 
 # A continuation prompt that displays two filled in arrows
@@ -88,13 +88,13 @@ add_newline = false
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bg:#2C3E50"
-style_root = "bg:#2C3E50"
+style_user = "bg:#33658A"
+style_root = "bg:#33658A"
 format = '[$user ]($style)'
 
 [directory]
-style = "bg:#16A085"
-format = "[ $path ]($style)"
+style = "bg:#33658A"
+format = "[ ](fg:#33658A)[ $path ]($style)[](fg:#33658A)"
 truncation_length = 3
 truncation_symbol = "… "
 read_only = " "
@@ -111,7 +111,7 @@ error_symbol = "[➜](bold red)" # used if previous command failed
 "Downloads" = ""
 "Music" = ""
 "Pictures" = ""
-"~" = ""
+"~" = " ~"
 "/" = "  "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
@@ -121,16 +121,24 @@ error_symbol = "[➜](bold red)" # used if previous command failed
 
 [git_branch]
 symbol = " "
-style = "bg:#33658A"
-format = '[](bg:#33658A fg:#000000)[[ $symbol $branch ](bg:#33658A)]($style)'
+style = "bg:#5a276d"
+format = '[ ](fg:#5a276d)[ $symbol $branch ]($style)'
 
 [git_status]
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
 up_to_date = "✓"
+style = "bg:#5a276d"
+format = '[[($all_status $ahead_behind )](bg:#5a276d)]($style)[](fg:#5a276d)'
+
+[cmd_duration]
 style = "bg:#33658A"
-format = '[[($all_status $ahead_behind )](bg:#33658A)]($style)[](fg:#33658A)'
+format = '[ ](fg:#33658A)[⏱ $duration ]($style)[](fg:#33658A)'
+
+[fill]
+symbol = " "
+style = "bold green"
 
 [nodejs]
 symbol = ""
@@ -220,10 +228,6 @@ symbol = " "
 [cmake]
 style = "bg:#33658A"
 format = '[$symbol]($style)'
-
-[cmd_duration]
-style = "bg:#33658A"
-format = '[](bg:#33658A fg:#000000)[⏱ $duration]($style)[](fg:#33658A)'
 
 [cobol]
 style = "bg:#33658A"
