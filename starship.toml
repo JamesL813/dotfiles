@@ -9,7 +9,7 @@
 
 format = """
 [ ](fg:green)\
-[](bg:green)\
+[  ](bg:green)\
 [ ](fg:green)\
 $hostname\
 $localip\
@@ -76,7 +76,7 @@ $cmd_duration\
 $jobs\
 $battery\
 $status\
-[\n  ❯ ](fg:#067e67)\
+[\n ❯ ](fg:#067e67)\
 $shell"""
 
 # A continuation prompt that displays two filled in arrows
@@ -95,8 +95,8 @@ format = '[$user ]($style)'
 [directory]
 style = "bg:bright-blue"
 format = "[ ](fg:bright-blue)[ $path ]($style)[](fg:bright-blue)"
-truncation_length = 3
-truncation_symbol = "  "
+truncation_length = 4
+truncation_symbol = " "
 read_only = " "
 
 # Replace the "❯" symbol in the prompt with "➜"
