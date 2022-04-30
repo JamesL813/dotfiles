@@ -8,9 +8,9 @@
 #colors
 
 format = """
-[ ](fg:green)\
-[  ](bg:green)\
-[ ](fg:green)\
+[ ](fg:black)\
+[  ](fg:green bg:black)\
+[ ](fg:black)\
 $hostname\
 $localip\
 $shlvl\
@@ -76,7 +76,7 @@ $cmd_duration\
 $jobs\
 $battery\
 $status\
-[\n ❯ ](fg:#067e67)\
+[\n ❯ ](fg:green)\
 $shell"""
 
 # A continuation prompt that displays two filled in arrows
@@ -93,7 +93,7 @@ style_root = "bg:#33658A"
 format = '[$user ]($style)'
 
 [directory]
-style = "bg:bright-blue"
+style = "bg:bright-blue fg:bright-white"
 format = "[ ](fg:bright-blue)[ $path ]($style)[](fg:bright-blue)"
 truncation_length = 4
 truncation_symbol = " "
