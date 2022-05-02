@@ -82,10 +82,11 @@ alias \
 
 # Git related
 alias  \
+	gi='git init' \
 	gs='git status' \
 	gc='git commit' \
 	ga='git add' \
-	gp='git push'
+	gp='git push' \
 	gd='git diff' \
 	gb='git branch' \
 	gl='git log' \
