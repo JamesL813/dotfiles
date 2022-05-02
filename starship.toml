@@ -77,6 +77,7 @@ $cmd_duration\
 $jobs\
 $battery\
 $status\
+$time\
 [\n ❯ ](fg:green)\
 $shell"""
 
@@ -140,10 +141,7 @@ format = '[ ](fg:blue)[⏱ $duration ]($style)[ ](fg:blue)'
 
 [fill]
 symbol = " "
-style = "bright-black"
-
-[battery]
-
+style = "black"
 
 [nodejs]
 symbol = ""
@@ -158,8 +156,8 @@ format = '[[ $symbol  ](bg:#86BBD8)]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#33658A"
-format = '[[ ♥ $time ](bg:#33658A)]($style)'
+style = "bg:black fg:bright-white"
+format = '[ ](fg:black)[ $time ]($style)[](fg:black)'
 
 [aws]
 symbol = "  "
