@@ -77,7 +77,6 @@ $cmd_duration\
 $jobs\
 $battery\
 $status\
-$time\
 [\n ❯ ](fg:green)\
 $shell"""
 
