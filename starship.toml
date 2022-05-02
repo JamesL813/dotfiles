@@ -4,7 +4,7 @@
 #u'\uE0A2'
 
 #$username\
-#$nodejs\
+
 #colors
 
 format = """
@@ -39,6 +39,7 @@ $julia\
 $kotlin\
 $lua\
 $nim\
+$nodejs\
 $ocaml\
 $perl\
 $php\
@@ -141,10 +142,13 @@ format = '[ ](fg:blue)[⏱ $duration ]($style)[ ](fg:blue)'
 symbol = " "
 style = "bright-black"
 
+[battery]
+
+
 [nodejs]
 symbol = ""
-style = "bg:#33658A"
-format = '[[ $symbol ](bg:#33658A)]($style)'
+style = "bg:blue"
+format = '[ ](fg:blue)[ $symbol ]($style)[ ](fg:blue)'
 
 [rust]
 symbol = ""
