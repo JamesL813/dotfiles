@@ -97,7 +97,7 @@ format = '[$user ]($style)'
 style = "bg:bright-blue fg:bright-white"
 format = "[ ](fg:bright-blue)[ $path ]($style)[](fg:bright-blue)"
 truncation_length = 4
-truncation_symbol = " "
+truncation_symbol = "  "
 read_only = " "
 
 # Replace the "❯" symbol in the prompt with "➜"
