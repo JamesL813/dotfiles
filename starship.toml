@@ -17,6 +17,7 @@ $shlvl\
 $singularity\
 $kubernetes\
 $directory\
+$fill\
 $vcsh\
 $hg_branch\
 $docker_context\
@@ -66,7 +67,6 @@ $azure\
 $env_var\
 $crystal\
 $custom\
-$fill\
 $git_branch\
 $git_commit\
 $git_state\
@@ -124,7 +124,7 @@ error_symbol = "[➜](bold red)" # used if previous command failed
 [git_branch]
 symbol = " "
 style = "bg:purple"
-format = '[ ](fg:purple)[ $symbol $branch ]($style)'
+format = '[](fg:purple)[ $symbol $branch ]($style)'
 
 [git_status]
 ahead = " ${count}"
@@ -132,31 +132,31 @@ diverged = " ${ahead_count} ${behind_count}"
 behind = " ${count}"
 up_to_date = ""
 style = "bg:purple"
-format = '[[($all_status $ahead_behind )](bg:purple)]($style)[](fg:purple)'
+format = '[[($all_status $ahead_behind )](bg:purple)]($style)[ ](fg:purple)'
 
 [cmd_duration]
 style = "bg:blue"
-format = '[ ](fg:blue)[⏱ $duration ]($style)[](fg:blue)'
+format = '[](fg:blue)[⏱ $duration ]($style)[ ](fg:blue)'
 
 [fill]
 symbol = " "
 style = "black"
 
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+
 [nodejs]
 symbol = ""
 style = "bg:blue"
-format = '[ ](fg:blue)[ $symbol ]($style)[ ](fg:blue)'
-
-[rust]
-symbol = ""
-style = "bg:#86BBD8"
-format = '[[ $symbol  ](bg:#86BBD8)]($style)'
+format = '[](fg:blue)[ $symbol ]($style)[ ](fg:blue)'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:black fg:bright-white"
-format = '[ ](fg:black)[ $time ]($style)[](fg:black)'
+format = '[](fg:black)[ $time ]($style)[ ](fg:black)'
 
 [aws]
 symbol = "  "
@@ -198,9 +198,9 @@ format = '[$symbol$branch]($style)'
 symbol = " "
 
 [java]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-symbol = " "
+style = "bg:bright-red"
+format = '[](fg:bright-red)[$symbol $version]($style)[ ](fg:bright-red)'
+symbol = " "
 
 [julia]
 style = "bg:#33658A"
@@ -272,8 +272,8 @@ style = "bg:#33658A"
 format = '[$symbol$context( \($namespace\))]($style)'
 
 [lua]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
+style = "bg:blue"
+format = '[](fg:blue)[$symbol $version]($style)[ ](fg:blue)'
 
 [ocaml]
 style = "bg:#33658A"
@@ -300,16 +300,27 @@ style = "bg:#33658A"
 format = '[$symbol]($style)'
 
 [python]
-style = "bg:#33658A"
-format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+symbol = ""
+style = "bg:blue fg:bright-yellow"
+format = '[](fg:blue)[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)[ ](fg:blue)'
 
 [red]
 style = "bg:#33658A"
 format = '[$symbol]($style)'
 
+[rlang]
+symbol = "R "
+style = "bg:blue"
+format = '[](fg:blue)[$symbol $version]($style)[ ](fg:blue)'
+
 [ruby]
 style = "bg:#33658A"
 format = '[$symbol]($style)'
+
+[rust]
+symbol = ""
+style = "bg:yellow"
+format = '[](fg:yellow)[$symbol $version]($style)[ ](fg:yellow)'
 
 [scala]
 style = "bg:#33658A"

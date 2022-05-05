@@ -6,26 +6,24 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-
-#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
 # Use powerline
 USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
+
+source /home/james/.config/lf/lfcd
+
 # Use manjaro zsh prompt
 #if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 #  source /usr/share/zsh/manjaro-zsh-prompt
 #fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 # Use $XINITRC variable if file exists.
 [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+
+#lf
 
 # sudo not required for some system commands
 #for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
@@ -452,6 +450,10 @@ alias \
 	#sed="sd" \
 	#grex
 	#du="dust" \
+
+alias \
+	lf="lfcd"
+
 	
 	
 eval "$(starship init zsh)"
