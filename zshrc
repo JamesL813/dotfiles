@@ -13,7 +13,7 @@ if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
 
-source /home/james/.config/lf/lfcd
+source /home/james/.config/lf/lfcd.sh
 
 # Use manjaro zsh prompt
 #if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then

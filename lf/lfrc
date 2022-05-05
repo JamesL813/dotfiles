@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # lf doc - https://godoc.org/github.com/gokcehan/lf
 # lfrc example - https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
