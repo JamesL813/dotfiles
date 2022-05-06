@@ -6,5 +6,8 @@ case "$1" in
     *.rar) unrar l "$1";;
     *.7z) 7z l "$1";;
     *.pdf) pdftotext "$1" -;;
-    *) bat -f "$1" ;;
+    *opendocument*) odt2txt "$1" ;;
+	*.md|*.rmd) mdcat -l --columns "$(($4-2))" "$1" ;;
+    *.csv|*.tsv) tidy-viewer -a "$1" ;;
+    *) bat -r 0:90 --style=plain --wrap=character --terminal-width "$(($4-2))" -f "$1";;
 esac
