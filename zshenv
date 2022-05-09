@@ -28,3 +28,4 @@ export WINIT_UNIX_BACKEND=x11
 export PLAYDATE_SDK_PATH=$XDG_DATA_HOME'/PlaydateSDK-1.9.3'
 export PATH=$PATH':'$PLAYDATE_SDK_PATH'/bin'
 
+. "/home/james/.local/share/cargo/env"
