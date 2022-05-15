@@ -5,6 +5,33 @@
 "              If you're a more advanced user, building your own .vimrc based
 "              on this file is still a good idea.
 
+
+
+
+"------------------------------------------------------------
+" Plugins {{{1
+
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+" Plug 'tpope/vim-surround'
+" Plug 'preservim/nerdtree'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/fzf.vim'
+" Plug 'jreybert/vimagit'
+" Plug 'lukesmithxyz/vimling'
+" Plug 'vimwiki/vimwiki'
+Plug 'vim-airline/vim-airline'
+" Plug 'tpope/vim-commentary'
+Plug 'ap/vim-css-color'
+call plug#end()
+
+
 "------------------------------------------------------------
 " Features {{{1
 "
@@ -118,12 +145,11 @@ if has('mouse')
 endif
 
 " Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
+" \"press <Enter> to continue"
 set cmdheight=2
 
 " Display line numbers on the left
-set number
-set relativenumber
+set number relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
@@ -166,3 +192,14 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 filetype plugin on
 
+
+" Splits open at the bottom and right
+set splitbelow splitright
+
+" Colors
+highlight LineNr ctermfg=DarkGray
+highlight Type ctermfg=LightBlue
+highlight Constant ctermfg=LightGreen
+highlight Statement ctermfg=Blue
+highlight Comment ctermfg=DarkGray
+highlight Identifier ctermfg=LightYellow

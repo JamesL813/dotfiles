@@ -65,7 +65,12 @@ cmd open ${{
     esac
 }}
 
-cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+cmd mkdir %{{
+  printf "Folder Name: "
+  read ans
+  mkdir -p $ans
+}}
 
 
 cmd mkfile %{{
@@ -187,6 +192,8 @@ cmd copy-absolute-path ${{
 map gh
 map m
 
+map <m-down> down # Mouse mappings
+map <m-up> up
 
 map ~ cd ~
 map . set hidden!
@@ -199,6 +206,7 @@ map md mkdir
 map D delete 
 map E extract
 map C clear
+map R bulk-rename
 
 # execute current file (must be executable)
 map x $$f
@@ -210,6 +218,8 @@ map O $mimeopen --ask $f
 
 # copy the file names of the selections
 map yn copy-filename
+map yp copy-absolute-path
+
 # Navigate among the parent directories
 map [ push hkl
 map ] push hjl
