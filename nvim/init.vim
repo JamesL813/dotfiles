@@ -26,6 +26,8 @@ Plug 'junegunn/fzf.vim'
 " Plug 'jreybert/vimagit'
 " Plug 'lukesmithxyz/vimling'
 " Plug 'vimwiki/vimwiki'
+" A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'vim-airline/vim-airline'
 " Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
