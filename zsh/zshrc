@@ -94,7 +94,11 @@ alias  \
 	gr='git rebase' \
 	gri='git rebase --interactive' \
 	gcp='git cherry-pick' \
-	grm='git rm' 
+	grm='git rm' \
+	gpush='git push' \
+	gpull='git pull' \
+	push='git push' \
+	pull='git pull'
 
 
 # Find out what is taking so much space on your drives
