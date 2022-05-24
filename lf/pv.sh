@@ -9,5 +9,5 @@ case "$1" in
     *opendocument*) odt2txt "$1" ;;
 	*.md|*.rmd) mdcat -l --columns "$(($4-2))" "$1" ;;
     *.csv|*.tsv) tidy-viewer -a "$1" ;;
-    *) bat -r 0:90 --style=plain --wrap=character --terminal-width "$(($4-2))" -f "$1";;
+    *) bat -r 0:90 --style=plain --theme=base16 --wrap=character --terminal-width "$(($4-2))" -f "$1";;
 esac

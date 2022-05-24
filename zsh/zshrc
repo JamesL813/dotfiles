@@ -39,7 +39,7 @@ alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -vI" \
-	dust="dust -ir" \
+	dust="dust -r" \
 	bc="bc -ql" \
 	exa="exa -xG --icons --group-directories-first" \
 	lsd="lsd --group-dirs first" \
@@ -52,6 +52,8 @@ alias \
 	df='df -h'  \
 	free="free -m" \
 	fd="fd -H"
+	vim='nvim'
+	vi='nvim'
 
 # Colorize commands when possible.
 
