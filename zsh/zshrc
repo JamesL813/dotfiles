@@ -460,6 +460,7 @@ alias \
 alias \
 	lf="lfcd"
 
+export BAT_THEME="base16"
 	
 	
 eval "$(starship init zsh)"
