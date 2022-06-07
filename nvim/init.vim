@@ -28,7 +28,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'vimwiki/vimwiki'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 " Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 call plug#end()
@@ -160,6 +160,10 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 
+set scrolloff=8
+set signcolumn=yes
+set colorcolumn=80
+
 "------------------------------------------------------------
 " Indentation options {{{1
 "
@@ -188,7 +192,7 @@ map Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <C-L>nohl<CR><C-L>
 
 "------------------------------------------------------------
 
@@ -196,10 +200,12 @@ filetype plugin on
 
 
 " Splits open at the bottom and right
-set splitbelow splitright
+" set splitbelow splitright
 
 " Colors
-highlight LineNr ctermfg=DarkGray
+highlight ColorColumn ctermbg=DarkGray
+highlight LineNrAbove ctermfg=DarkGray
+highlight LineNrBelow ctermfg=DarkGray
 highlight Type ctermfg=LightBlue
 highlight Constant ctermfg=LightGreen
 highlight Statement ctermfg=Blue
