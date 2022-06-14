@@ -6,26 +6,30 @@ cd .config
 
 # zsh
 mkdir zsh
-ln -s dotfiles/zsh/zshrc zsh/.zshrc
-
+cd zsh
+ln -s ../dotfiles/zsh/zshrc .zshrc
+cd ..
 # lf
 mkdir lf
-ln -s dotfiles/lf/_lf lf/_lf
-ln -s dotfiles/lf/colors lf/colors
-ln -s dotfiles/lf/icons lf/icons
-ln -s dotfiles/lf/lf.vim lf/lf.vim
-ln -s dotfiles/lf/lfcd.sh lf/lfcd.sh
-ln -s dotfiles/lf/lfrc lf/lfrc
-ln -s dotfiles/lf/pv.sh lf/pv.sh
-
+cd lf
+ln -s ../dotfiles/lf/_lf _lf
+ln -s ../dotfiles/lf/colors colors
+ln -s ../dotfiles/lf/icons icons
+ln -s ../dotfiles/lf/lf.vim lf.vim
+ln -s ../dotfiles/lf/lfcd.sh lfcd.sh
+ln -s ../dotfiles/lf/lfrc lfrc
+ln -s ../dotfiles/lf/pv.sh pv.sh
+cd ..
 # neovim
 mkdir nvim
-ln -s dotfiles/nvim/init.vim nvim.init.vim
-
+cd nvim
+ln -s ../dotfiles/nvim/init.vim init.vim
+cd ..
 # starship
 ln -s dotfiles/starship.toml starship.toml
 
 # alacritty
 mkdir alacritty
-ln -s dotfiles/alacritty.yml alacritty.yml
+cd alacritty
+ln -s ../dotfiles/alacritty.yml alacritty.yml
 
