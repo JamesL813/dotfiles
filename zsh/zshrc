@@ -13,6 +13,11 @@ if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 fi
 
+
+if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	
+fi
+
 source /home/james/.config/lf/lfcd.sh
 
 # Use manjaro zsh prompt
@@ -461,7 +466,6 @@ alias \
 	lf="lfcd"
 
 export BAT_THEME="base16"
-	
-	
+
 eval "$(starship init zsh)"
 

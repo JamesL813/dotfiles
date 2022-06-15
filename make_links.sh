@@ -12,6 +12,7 @@ cd ..
 # lf
 mkdir lf
 cd lf
+rm -f *
 ln -s ../dotfiles/lf/_lf _lf
 ln -s ../dotfiles/lf/colors colors
 ln -s ../dotfiles/lf/icons icons
@@ -23,6 +24,7 @@ cd ..
 # neovim
 mkdir nvim
 cd nvim
+rm init.vim
 ln -s ../dotfiles/nvim/init.vim init.vim
 cd ..
 # starship
