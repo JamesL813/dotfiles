@@ -8,9 +8,9 @@
 #colors
 
 format = """
-[ ](fg:black)\
-[  ](fg:green bg:black)\
-[ ](fg:black)\
+[ ](fg:bright-white)\
+[  ](fg:black bg:bright-white)\
+[ ](fg:bright-white)\
 $hostname\
 $localip\
 $shlvl\
