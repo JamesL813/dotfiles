@@ -18,17 +18,27 @@ if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	
 fi
 
+if [[ -e /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+	source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 if [[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
 	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+if [[ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 source /home/james/.config/lf/lfcd.sh
 
+# Navigation
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[^[[D' emacs-backward-word
 bindkey '^H' backward-kill-word
+
 # Use manjaro zsh prompt
 #if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 #  source /usr/share/zsh/manjaro-zsh-prompt
