@@ -87,14 +87,14 @@ add_newline = false
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bg:blue"
-style_root = "bg:blue"
-format = "[ ](fg:blue)[ $user ]($style)[](fg:blue bg:bright-blue)"
+style_user = "bg:bright-blue"
+style_root = "bg:bright-blue"
+format = "[ ](fg:bright-blue)[ $user ]($style)[](fg:bright-blue bg:blue)"
 # format = '[$user ]($style)'
 
 [directory]
-style = "bg:bright-blue fg:bright-white"
-format = "[ $path ]($style)[](fg:bright-blue)"
+style = "bg:blue fg:bright-white"
+format = "[ $path ]($style)[](fg:blue)"
 truncation_length = 4
 truncation_symbol = "  "
 read_only = " "
@@ -122,8 +122,8 @@ error_symbol = "[➜](bold red)" # used if previous command failed
 
 [git_branch]
 symbol = " "
-style = "bg:purple"
-format = '[](fg:purple)[ $symbol $branch ]($style)'
+style = "bg:bright-purple"
+format = '[](fg:bright-purple)[ $symbol $branch]($style)[ ](fg:bright-purple bg:purple)'
 
 [git_status]
 ahead = " ${count}"
