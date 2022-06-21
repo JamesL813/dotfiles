@@ -8,9 +8,7 @@
 #colors
 
 format = """
-[ ](fg:bright-white)\
-[  ](fg:black bg:bright-white)\
-[ ](fg:bright-white)\
+$username\
 $hostname\
 $localip\
 $shlvl\
@@ -77,7 +75,7 @@ $cmd_duration\
 $jobs\
 $battery\
 $status\
-[\n ❯ ](fg:green)\
+[\n  ❯ ](fg:bright-blue)\
 $shell"""
 
 # A continuation prompt that displays two filled in arrows
@@ -89,13 +87,14 @@ add_newline = false
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bg:#33658A"
-style_root = "bg:#33658A"
-format = '[$user ]($style)'
+style_user = "bg:blue"
+style_root = "bg:blue"
+format = "[ ](fg:blue)[ $user ]($style)[](fg:blue bg:bright-blue)"
+# format = '[$user ]($style)'
 
 [directory]
 style = "bg:bright-blue fg:bright-white"
-format = "[ ](fg:bright-blue)[ $path ]($style)[](fg:bright-blue)"
+format = "[ $path ]($style)[](fg:bright-blue)"
 truncation_length = 4
 truncation_symbol = "  "
 read_only = " "
