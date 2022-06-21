@@ -75,7 +75,7 @@ $cmd_duration\
 $jobs\
 $battery\
 $status\
-[\n  ❯ ](fg:bright-blue)\
+[\n ❯ ](fg:bright-blue)\
 $shell"""
 
 # A continuation prompt that displays two filled in arrows
@@ -89,7 +89,7 @@ add_newline = false
 show_always = true
 style_user = "bg:bright-blue"
 style_root = "bg:bright-blue"
-format = "[ ](fg:bright-blue)[ $user ]($style)[](fg:bright-blue bg:blue)"
+format = "[ ](fg:bright-blue)[ $user ]($style)[](fg:bright-blue bg:blue)"
 # format = '[$user ]($style)'
 
 [directory]
@@ -123,7 +123,7 @@ error_symbol = "[➜](bold red)" # used if previous command failed
 [git_branch]
 symbol = " "
 style = "bg:bright-purple"
-format = '[](fg:bright-purple)[ $symbol $branch]($style)[ ](fg:bright-purple bg:purple)'
+format = '[](fg:bright-purple)[ $symbol $branch]($style)[ ](fg:purple bg:bright-purple)'
 
 [git_status]
 ahead = " ${count}"
