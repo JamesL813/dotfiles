@@ -97,7 +97,7 @@ style = "bg:blue fg:bright-white"
 format = "[ $path ]($style)[](fg:blue)"
 truncation_length = 4
 truncation_symbol = "  "
-read_only = " "
+read_only = ""
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
@@ -107,12 +107,12 @@ error_symbol = "[➜](bold red)" # used if previous command failed
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = ""
-"Downloads" = ""
-"Music" = ""
-"Pictures" = ""
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 "~" = " ~"
-"/" = "  "
+"/" = " "
 
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
@@ -127,7 +127,7 @@ format = '[](fg:bright-purple)[ $symbol $branch]($style)[ ](fg:purple bg:b
 
 [git_status]
 ahead = " ${count}"
-diverged = " ${ahead_count} ${behind_count}"
+diverged = " ${ahead_count}  ${behind_count}"
 behind = " ${count}"
 up_to_date = ""
 style = "bg:purple"
