@@ -89,12 +89,12 @@ add_newline = false
 show_always = true
 style_user = "bg:bright-blue"
 style_root = "bg:bright-blue"
-format = "[ ](fg:bright-blue)[ $user ]($style)[](fg:bright-blue bg:blue)"
+format = "[ ](fg:bright-blue)[ $user]($style)[](fg:bright-blue bg:blue)"
 # format = '[$user ]($style)'
 
 [directory]
 style = "bg:blue fg:bright-white"
-format = "[ $path ]($style)[](fg:blue)"
+format = "[ $path]($style)[](fg:blue)"
 truncation_length = 4
 truncation_symbol = "  "
 read_only = ""
