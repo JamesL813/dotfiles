@@ -301,7 +301,7 @@ format = '[$symbol]($style)'
 [python]
 symbol = ""
 style = "bg:blue fg:bright-yellow"
-format = '[](fg:blue)[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)[ ](fg:blue)'
+format = '[](fg:blue)[${symbol} ${pyenv_prefix}(${version})(\($virtualenv\))]($style)[ ](fg:blue)'
 
 [red]
 style = "bg:#33658A"

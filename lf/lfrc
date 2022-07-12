@@ -35,7 +35,8 @@ set findlen 2
 set tabstop 4
 set mouse
 set previewer ~/.config/lf/pv.sh
-
+set info size
+set dircounts on
 # adjust coloumn width to terminal
 %{{
 	w=$COLUMNS

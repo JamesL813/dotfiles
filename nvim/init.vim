@@ -204,6 +204,7 @@ filetype plugin on
 
 " Colors
 highlight ColorColumn ctermbg=DarkGray
+highlight LineNr ctermfg=Green
 highlight LineNrAbove ctermfg=DarkGray
 highlight LineNrBelow ctermfg=DarkGray
 highlight Type ctermfg=LightBlue
