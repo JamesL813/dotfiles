@@ -109,6 +109,7 @@ alias  \
 	gi='git init' \
 	gs='git status' \
 	gc='git commit' \
+	gcl='git clone' \
 	ga='git add' \
 	gd='git diff' \
 	gb='git branch' \
@@ -173,7 +174,6 @@ alias \
 	ll="ls -l" \
 	la="ls -a" \
 	lla="ls -la" \
-	sl="ls" \
 	l="ls" \
 	s="ls"
 	
