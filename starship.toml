@@ -112,7 +112,7 @@ error_symbol = "[➜](bold red)" # used if previous command failed
 "Music" = " "
 "Pictures" = " "
 "~" = " "
-"/" = " "
+"/" = "  "
 
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "

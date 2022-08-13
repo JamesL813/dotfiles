@@ -175,8 +175,8 @@ alias \
 	la="ls -a" \
 	lla="ls -la" \
 	l="ls" \
-	s="ls"
-	
+	s="ls" \
+	tree="ls -T"
 
 #List people in a Twitch channel chat
 function twitch_list() { curl -s "https://tmi.twitch.tv/group/user/$1/chatters" | less; }
