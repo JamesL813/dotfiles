@@ -231,8 +231,8 @@ map Jh cd ~
 map Jd cd ~/Documents
 map JD cd ~/Downloads
 map Jg cd ~/gitrepos
-map Jp cd ~/projects
-map J. cd ~/.config
-map Jv cd ~/.config/nvim
-map Jz cd ~/.config/zsh
+map Jp cd ~/Projects
+map J. cd ~/.config/dotfiles
+map Jv cd ~/.config/dotfiles/nvim
+map Jz cd ~/.config/dotfiles/zsh
 
