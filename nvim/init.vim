@@ -211,4 +211,4 @@ highlight Type ctermfg=LightBlue
 highlight Constant ctermfg=LightGreen
 highlight Statement ctermfg=Blue
 highlight Comment ctermfg=DarkGray
-highlight Identifier ctermfg=LightYellow
+highlight Identifier ctermfg=Gray
