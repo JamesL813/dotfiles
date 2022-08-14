@@ -223,7 +223,7 @@ symbol = " "
 
 [package]
 style = "bg:#33658A"
-format = '[$symbol$version]($style)'
+format = '[](fg:#33658A)[$symbol $version]($style)[ ](fg:#33658A)'
 symbol = " "
 
 [cmake]
