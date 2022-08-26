@@ -54,6 +54,7 @@ bindkey '^H' backward-kill-word
 #	alias $command="sudo $command"
 #done; unset command
 
+alias colors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
 
 #Add some flags to some basic commands that probably should be default
 #The aliases below with '-i' refer to asking for confirmation before
