@@ -8,6 +8,8 @@ cd .config
 mkdir zsh
 cd zsh
 ln -s ../dotfiles/zsh/zshrc .zshrc
+ln -s ../dotfiles/zsh/p10k.zsh .p10k.zsh
+
 cd ..
 # lf
 mkdir lf
