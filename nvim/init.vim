@@ -23,14 +23,25 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 " Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf.vim'
+
+" Color Schemes
+
+Plug 'nburns/vim-auto-light-dark'
+
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'tomasiser/vim-code-dark'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/edge'
+
 " Plug 'jreybert/vimagit'
 " Plug 'lukesmithxyz/vimling'
 " Plug 'vimwiki/vimwiki'
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-" Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 " Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 
@@ -203,12 +214,32 @@ filetype plugin on
 " set splitbelow splitright
 
 " Colors
-highlight ColorColumn ctermbg=DarkGray
-highlight LineNr ctermfg=Green
-highlight LineNrAbove ctermfg=DarkGray
-highlight LineNrBelow ctermfg=DarkGray
-highlight Type ctermfg=LightBlue
-highlight Constant ctermfg=LightGreen
-highlight Statement ctermfg=Blue
-highlight Comment ctermfg=DarkGray
-highlight Identifier ctermfg=Gray
+"highlight ColorColumn ctermbg=DarkGray
+"highlight ColorColumn ctermbg=DarkGray
+"highlight LineNr ctermfg=Green
+"highlight LineNrAbove ctermfg=DarkGray
+"highlight LineNrBelow ctermfg=DarkGray
+"highlight Type ctermfg=LightBlue
+"highlight Constant ctermfg=LightGreen
+"highlight Statement ctermfg=Blue
+"highlight Comment ctermfg=DarkGray
+"highlight Identifier ctermfg=Gray
+"set background=light
+"colorscheme PaperColor
+
+let g:codedark_italics=1
+let g:airline_theme = 'edge'
+
+
+
+colorscheme edge
+
+
+function DarkMode()
+    set background=dark
+endfunction
+
+function LightMode()
+    set background=light
+endfunction
+

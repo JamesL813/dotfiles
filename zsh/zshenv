@@ -24,6 +24,7 @@ alias irssi="irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HO
 #
 export WINIT_UNIX_BACKEND=x11
 
+export PATH=$PATH':'$HOME'/.local/bin'
 # playdate
 export PLAYDATE_SDK_PATH=$XDG_DATA_HOME'/PlaydateSDK-1.9.3'
 export PATH=$PATH':'$PLAYDATE_SDK_PATH'/bin'
