@@ -1,3 +1,11 @@
+function DarkMode()
+    set background=dark
+endfunction
+
+function LightMode()
+    set background=light
+endfunction
+
 " URL: https://vim.wikia.com/wiki/Example_vimrc
 " Authors: https://vim.wikia.com/wiki/Vim_on_Libera_Chat
 " Description: A minimal, but feature rich, example .vimrc. If you are a
@@ -26,13 +34,10 @@ Plug 'junegunn/fzf.vim'
 
 " Color Schemes
 
-Plug 'nburns/vim-auto-light-dark'
-
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'tomasiser/vim-code-dark'
+" Plug 'nburns/vim-auto-light-dark'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/edge'
-
 " Plug 'jreybert/vimagit'
 " Plug 'lukesmithxyz/vimling'
 " Plug 'vimwiki/vimwiki'
@@ -227,19 +232,10 @@ filetype plugin on
 "set background=light
 "colorscheme PaperColor
 
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
 let g:codedark_italics=1
-let g:airline_theme = 'edge'
-
-
+let g:airline_theme='edge'
 
 colorscheme edge
-
-
-function DarkMode()
-    set background=dark
-endfunction
-
-function LightMode()
-    set background=light
-endfunction
-
