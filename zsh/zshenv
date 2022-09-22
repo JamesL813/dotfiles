@@ -11,6 +11,9 @@ export XDG_STATE_HOME=$HOME'/.local/state'
 export EDITOR='/usr/bin/nvim'
 export ZDOTDIR=$XDG_CONFIG_HOME'/zsh'
 export HISTFILE=$XDG_STATE_HOME'/zsh/history'
+export TODO_DIR=$XDG_DATA_HOME'/todo'
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 export CARGO_HOME=$XDG_DATA_HOME'/cargo'

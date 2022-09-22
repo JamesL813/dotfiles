@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # Use powerline
 # USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
@@ -128,6 +129,9 @@ alias  \
 	push='git push' \
 	pull='git pull'
 
+# todo.txt
+export TODOTXT_DEFAULT_ACTION=ls
+alias todo='todo.sh -dt $XDG_CONFIG_HOME/todo/todo.cfg'
 
 # Find out what is taking so much space on your drives
 alias diskspace="du -S | sort -n -r | less"
