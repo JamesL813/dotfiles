@@ -222,6 +222,8 @@ let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 let g:codedark_italics=1
 
+let g:vim_markdown_folding_disabled = 1
+
 colorscheme edge
 let g:airline_theme='edge'
 " Some servers have issues with backup files, see #649.
