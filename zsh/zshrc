@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -82,8 +82,8 @@ bindkey '^[[2~' overwrite-mode                                  # Insert key
 bindkey '^[[3~' delete-char                                     # Delete key
 bindkey '^[[C'  forward-char                                    # Right key
 bindkey '^[[D'  backward-char                                   # Left key
-bindkey '^[[5~' history-beginning-search-backward               # Page up key
-bindkey '^[[6~' history-beginning-search-forward                # Page down key
+# bindkey '^[[5~' history-beginning-search-backward               # Page up key
+# bindkey '^[[6~' history-beginning-search-forward                # Page down key
 
 # Navigate words with ctrl+arrow keys
 bindkey '^[Oc' forward-word                                     #
@@ -109,7 +109,7 @@ bindkey '^[[Z' undo                                             # Shift+tab undo
 #	alias $command="sudo $command"
 #done; unset command
 
-# alias colors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
+alias display_colors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
 
 # date
 alias today='date +%F'
@@ -137,7 +137,7 @@ alias \
 	free="free -m" \
 	fd="fd -H"
 	vim='nvim'
-	vi='nvim'
+	vi='vim'
 
 # Colorize commands when possible.
 
@@ -164,7 +164,8 @@ alias \
 	z="zathura" \
 	yay="paru" \
 	fetch="fastfetch" \
-	neofetch="fastfetch"
+	neofetch="fastfetch" \
+	hx="helix"
 
 # Git related
 alias  \
@@ -203,12 +204,6 @@ export LESS_TERMCAP_so=$'\E[01;47;34m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-R
-
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey '^[[A' history-substring-search-up			
-bindkey '^[[B' history-substring-search-down
 
 ## Plugins section: Enable fish style features
 # bind UP and DOWN arrow keys to history substring search
