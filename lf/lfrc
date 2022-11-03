@@ -225,6 +225,9 @@ map E extract
 map C clear
 map R bulk-rename
 
+map J half-down
+map K half-up
+
 # execute current file (must be executable)
 map x $$f
 map X !$f
@@ -242,19 +245,20 @@ map [ push hkl
 map ] push hjl
 
 # git
-map gb :git_branch
-map gp ${{clear; git pull --rebase || true; echo "press ENTER"; read ENTER}}
-map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
-map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
+map G
+map Gb :git_branch
+map Gp ${{clear; git pull --rebase || true; echo "press ENTER"; read ENTER}}
+map Gs ${{clear; git status; echo "press ENTER"; read ENTER}}
+map Gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
 
 # Fast navigation
-map Jh cd ~
-map Jd cd ~/Documents
-map JD cd ~/Downloads
-map Jg cd ~/gitrepos
-map Jp cd ~/Projects
-map Js cd ~/School
-map J. cd ~/.config/dotfiles
-map Jv cd ~/.config/dotfiles/nvim
-map Jz cd ~/.config/dotfiles/zsh
+map gh cd ~
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gg cd ~/gitrepos
+map gp cd ~/Projects
+map gs cd ~/School
+map g. cd ~/.config/dotfiles
+map gv cd ~/.config/dotfiles/nvim
+map gz cd ~/.config/dotfiles/zsh
 
