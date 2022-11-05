@@ -2,7 +2,7 @@ local M = {}
 
 M.ui = {
 	statusline = {
-		separator_style = "block", -- default/round/block/arrow
+		separator_style = "default", -- default/round/block/arrow
 		overriden_modules = nil,
 	},
 

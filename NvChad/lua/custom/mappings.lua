@@ -14,10 +14,17 @@ M.general = {
 		["<C-n>"] = { "<cmd> Telescope <CR>", "Open Telescope" },
 		["Y"] = { "y$", "y consistancy" },
 		["U"] = { "<C-R>", "redo is U" },
-		["H"] = { "^", "jump to first non-whitespace character of a line" },
+
+		["H"] = { "b", "jump to first non-whitespace character of a line" },
 		["J"] = { "}", "jump down a paragraph" },
 		["K"] = { "{", "jump up a paragraph" },
-		["L"] = { "$", "jump to the end of a line" },
+		["L"] = { "w", "jump to the end of a line" },
+
+		["<A-h>"] = { "^", "jump to first non-whitespace character of a line" },
+		["<A-j>"] = { "G", "jump down a paragraph" },
+		["<A-k>"] = { "gg", "jump up a paragraph" },
+		["<A-l>"] = { "$", "jump to the end of a line" },
+
 		["<TAB>"] = { ">>", "Indent line" },
 		["<S-Tab>"] = { "<<", "Unindent line" },
 

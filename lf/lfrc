@@ -259,6 +259,7 @@ map gg cd ~/gitrepos
 map gp cd ~/Projects
 map gs cd ~/School
 map g. cd ~/.config/dotfiles
+map gl cd ~/.local/share
 map gv cd ~/.config/dotfiles/nvim
 map gz cd ~/.config/dotfiles/zsh
 

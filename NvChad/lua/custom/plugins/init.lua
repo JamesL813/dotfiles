@@ -13,4 +13,5 @@ return {
 		end,
 	},
 	["ThePrimeagen/vim-be-good"] = {},
+	["Mofiqul/vscode.nvim"] = {},
 }
