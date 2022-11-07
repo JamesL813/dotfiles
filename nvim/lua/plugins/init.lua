@@ -2,38 +2,37 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
+    -- Packer --
     use 'wbthomason/packer.nvim'
 
-    use {
-        'haorenW1025/completion-nvim',
-        opt = true,
-        requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
-    }
     use 'nvim-tree/nvim-web-devicons'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+    -- LSP --
+    use 'williamboman/nvim-lsp-installer'
+    use "neovim/nvim-lspconfig"
+
     -- statusline --
-    use {
-        'nvim-lualine/lualine.nvim',
+    use { 'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
---        config = function() require('lualine').setup() end
+        -- config = function() require('lualine').setup() end
     }
 
     -- git --
-    use {
-        'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+    use { 'lewis6991/gitsigns.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('gitsigns').setup() end
     }
 
     -- colored hex codes: #FF0000 --
-    use {
-        'NvChad/nvim-colorizer.lua',
+    use { 'NvChad/nvim-colorizer.lua',
         config = function() require('colorizer').setup() end
     }
 
     -- colorschemes --
     use 'olivercederborg/poimandres.nvim'
     use 'Mofiqul/vscode.nvim'
-
+    use 'sainnhe/edge'
+    use 'morhetz/gruvbox'
+    use 'arcticicestudio/nord-vim'
 end)

@@ -19,21 +19,53 @@ vim.g.mapleader = ' '
 -- Disable keys
 map('n', ';', '<nop>')
 
--- Map Esc to kk
-
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
 
 -- Toggle auto-indenting for code paste
 
--- Change split orientation
+-----------------------------------------------------------
+-- Navigation
+-----------------------------------------------------------
+-- Normal --
+-- Move around splits using Alt + {h,j,k,l}
+map('n', '<A-h>', '<C-w>h')
+map('n', '<A-j>', '<C-w>j')
+map('n', '<A-k>', '<C-w>k')
+map('n', '<A-l>', '<C-w>l')
 
--- Move around splits using Ctrl + {h,j,k,l}
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
+map('n', 'H', 'b') -- jump to first non-whitespace character of a line
+map('n', 'J', '}') -- jump down a paragraph
+map('n', 'K', '{') -- jump up a paragraph'
+map('n', 'L', 'w') -- jump to the end of a line
 
+map('n', '<C-h>', '^') --  jump to first non-whitespace character of a line
+map('n', '<C-j>', 'G') --  jump down a paragraph
+map('n', '<C-k>', 'gg') -- jump up a paragraph
+map('n', '<C-l>', '$') -- jump to the end of a line
+
+map('n', 'Y', 'y$')	-- y consistancy
+map('n', 'U', '<C-R>') -- redo is U
+
+map('n', '<TAB>', '>>') -- Indent line
+map('n', '<S-Tab>', '<<') -- Unindent line
+
+map('n', ';', ':', { nowait = true })
+map('n', '<leader>v', '<cmd> vs <CR>') -- vertical split
+
+-- Visual --
+map('v', 'H', 'b') -- jump to first non-whitespace character of a line
+map('v', 'J', '}') -- jump down a paragraph
+map('v', 'K', '{') -- jump up a paragraph'
+map('v', 'L', 'w') -- jump to the end of a line
+
+map('v', '<C-h>', '^') --  jump to first non-whitespace character of a line
+map('v', '<C-j>', 'G') --  jump down a paragraph
+map('v', '<C-k>', 'gg') -- jump up a paragraph
+map('v', '<C-l>', '$') -- jump to the end of a line
+
+map('v', '<Tab>', '>><Esc>gv') -- Indent line
+map('v', '<S-Tab>', '<<<Esc>gv') -- Unindent line
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
@@ -52,36 +84,12 @@ map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
+-- map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
-
-map('n', '<C-n>', '<cmd> Telescope <CR>') -- Open Telescope
-
-map('n', 'Y', 'y$')	-- y consistancy
-map('n', 'U', '<C-R>') -- redo is U
-
-map('n', 'H', 'b') -- jump to first non-whitespace character of a line
-map('n', 'J', '}') -- jump down a paragraph
-map('n', 'K', '{') -- jump up a paragraph'
-map('n', 'L', 'w') -- jump to the end of a line
-
-map('n', '<A-h>', '^') --  jump to first non-whitespace character of a line
-map('n', '<A-j>', 'G') --  jump down a paragraph
-map('n', '<A-k>', 'gg') -- jump up a paragraph
-map('n', '<A-l>', '$') -- jump to the end of a line
-
-map('n', '<TAB>', '>>') -- Indent line
-map('n', '<S-Tab>', '<<') -- Unindent line
-
-map('n', ';', ':', { nowait = true })
-map('n', '<leader>v', '<cmd> vs <CR>') -- vertical split
-
--- visual
-map('n', '<Tab>', '>><Esc>gv') -- Indent line
-map('n', '<S-Tab>', '<<<Esc>gv') -- Unindent line
+-- map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+-- map('n', '<C-n>', '<cmd> Telescope <CR>') -- Open Telescope
 
 return M
