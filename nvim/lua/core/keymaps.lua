@@ -79,14 +79,16 @@ map('n', '<leader>q', ':q<CR>')
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
 
+map('n', '<leader>ps', ':PackerSync<CR>')
+
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
 -- map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+-- map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
+-- map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Tagbar
 -- map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
