@@ -17,21 +17,33 @@ lsp_installer.setup {
 lspconfig.util.default_config = vim.tbl_extend(
     "force",
     lspconfig.util.default_config,
-    {
-        on_attach = on_attach
-    }
+    { on_attach = on_attach }
 )
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
 
 -- 3. Loop through all of the installed servers and set it up via lspconfig
 for _, server in ipairs(lsp_installer.get_installed_servers()) do
     lspconfig[server.name].setup {}
 end
+
+-- Settings --
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+local border = {
+    { "🭽", "FloatBorder" },
+    { "▔", "FloatBorder" },
+    { "🭾", "FloatBorder" },
+    { "▕", "FloatBorder" },
+    { "🭿", "FloatBorder" },
+    { "▁", "FloatBorder" },
+    { "🭼", "FloatBorder" },
+    { "▏", "FloatBorder" },
+}
 
 -------------------------------
 -- Keymaps
@@ -59,7 +71,7 @@ local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     key.set('n', 'gD', buf.declaration, bufopts)
     key.set('n', 'gd', buf.definition, bufopts)
-    key.set('n', 'K', buf.hover, bufopts)
+--    key.set('n', 'K', buf.hover, bufopts)
     key.set('n', 'gi', buf.implementation, bufopts)
     key.set('n', '<C-k>', buf.signature_help, bufopts)
     --  key.set('n', '<space>wa', buf.add_workspace_folder, bufopts)
@@ -67,9 +79,9 @@ local on_attach = function(client, bufnr)
     --  key.set('n', '<space>wl', function()
     --    print(vim.inspect(buf.list_workspace_folders()))
     --  end, bufopts)
-    key.set('n', '<space>D', buf.type_definition, bufopts)
-    key.set('n', '<space>rn', buf.rename, bufopts)
-    key.set('n', '<space>ca', buf.code_action, bufopts)
+    key.set('n', '<leader>D', buf.type_definition, bufopts)
+    key.set('n', '<leader>r', buf.rename, bufopts)
+    key.set('n', '<leader>ca', buf.code_action, bufopts)
     key.set('n', 'gr', buf.references, bufopts)
     -- key.set('n', '<space>f', function() buf.format { async = true } end, bufopts)
 end

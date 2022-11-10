@@ -52,6 +52,7 @@ map('n', '<S-Tab>', '<<') -- Unindent line
 
 map('n', ';', ':', { nowait = true })
 map('n', '<leader>v', '<cmd> vs <CR>') -- vertical split
+map('n', '<leader><Tab>', '<cmd> bn <CR>') -- vertical split
 
 -- Visual --
 map('v', 'H', 'b') -- jump to first non-whitespace character of a line
@@ -67,7 +68,7 @@ map('v', '<C-l>', '$') -- jump to the end of a line
 map('v', '<Tab>', '>><Esc>gv') -- Indent line
 map('v', '<S-Tab>', '<<<Esc>gv') -- Unindent line
 -- Reload configuration without restart nvim
-map('n', '<leader>r', ':so %<CR>')
+map('n', '<leader>rl', ':so %<CR>')
 
 -- Fast saving with <leader> and w
 map('n', '<leader>w', ':w<CR>')

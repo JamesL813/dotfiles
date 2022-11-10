@@ -25,6 +25,11 @@ return require('packer').startup(function(use)
         config = function() require('gitsigns').setup() end
     }
 
+    use { 'lukas-reineke/indent-blankline.nvim',
+        config = function() require('indent_blankline').setup {
+        }
+    end,
+    }
     -- colored hex codes: #FF0000 --
     use { 'NvChad/nvim-colorizer.lua',
         config = function() require('colorizer').setup() end

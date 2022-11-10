@@ -49,7 +49,7 @@ opt.tabstop = 4             -- 1 tab == 4 spaces
 opt.autoindent = true
 opt.smartindent = true      -- Autoindent new lines
 opt.breakindent = true
-opt.showbreak = "+ "
+opt.showbreak = "▏ "
 
 -----------------------------------------------------------
 -- Memory, CPU
