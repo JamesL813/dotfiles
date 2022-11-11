@@ -1,4 +1,4 @@
-vim.cmd('colorscheme vscode')
+vim.o.background = 'dark'
 
 
 ----------------------------------------
@@ -22,6 +22,8 @@ if not present then
     return
 end
 
+vim.cmd('colorscheme vscode')
+
 vscode.setup {
     -- Enable transparent background
     transparent = true,
@@ -44,8 +46,3 @@ vscode.setup {
         String = { fg = c.vscGitAdded, bg = 'NONE' }
     }
 }
-
--- For dark theme (neovim's default)
--- vim.o.background = 'dark'
--- For light theme
--- vim.o.background = 'light'
