@@ -40,8 +40,8 @@ map('n', 'K', '{') -- jump up a paragraph'
 map('n', 'L', 'w') -- jump to the end of a line
 
 map('n', '<C-h>', '^') --  jump to first non-whitespace character of a line
-map('n', '<C-j>', 'G') --  jump down a paragraph
-map('n', '<C-k>', 'gg') -- jump up a paragraph
+map('n', '<C-j>', '<C-d>') --  jump down a paragraph
+map('n', '<C-k>', '<C-u>') -- jump up a paragraph
 map('n', '<C-l>', '$') -- jump to the end of a line
 
 map('n', 'Y', 'y$')	-- y consistancy
@@ -61,8 +61,8 @@ map('v', 'K', '{') -- jump up a paragraph'
 map('v', 'L', 'w') -- jump to the end of a line
 
 map('v', '<C-h>', '^') --  jump to first non-whitespace character of a line
-map('v', '<C-j>', 'G') --  jump down a paragraph
-map('v', '<C-k>', 'gg') -- jump up a paragraph
+map('v', '<C-j>', '<C-d>') --  jump down a paragraph
+map('v', '<C-k>', '<C-u>') -- jump up a paragraph
 map('v', '<C-l>', '$') -- jump to the end of a line
 
 map('v', '<Tab>', '>><Esc>gv') -- Indent line
@@ -87,7 +87,8 @@ map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
--- map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
+    map('n', '<leader>`', ':NvimTreeToggle<CR>')            -- open/close
+    map('n', '<leader>t', ':NvimTreeToggle<CR>')            -- open/close
 -- map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
 -- map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
