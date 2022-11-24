@@ -40,7 +40,7 @@ M.lspkind = {
     Package = "",
     Copilot = " ",
 }
- --          
+ --           
 M.statusline_separators = {
     empty = {
         left = "",

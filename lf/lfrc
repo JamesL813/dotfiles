@@ -253,8 +253,8 @@ map Gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%C
 
 # Fast navigation
 map gh cd ~
-map gd cd ~/Documents
-map gD cd ~/Downloads
+map gD cd ~/Documents
+map gd cd ~/Downloads
 map gg cd ~/gitrepos
 map gp cd ~/Projects
 map gs cd ~/School
