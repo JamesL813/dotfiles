@@ -42,27 +42,30 @@ M.lspkind = {
 }
  --          
 M.statusline_separators = {
+    empty = {
+        left = "",
+        right = "",
+        left_sep = "",
+        right_sep = "",
+    },
     default = {
         left = "",
         right = "",
         left_sep = "",
-        right_sep = " ",
+        right_sep = "",
     },
-
-    round = { -- '', right = ''
+    round = {
         left = "",
         right = "",
         left_sep = "",
-        right_sep = " ",
+        right_sep = "",
     },
-
     block = {
         left = "█",
         right = "█",
         left_sep = "│",
         right_sep = "│",
     },
-
     arrow = {
         left = "",
         right = "",

@@ -1,0 +1,168 @@
+
+
+# sudo not required for some system commands
+#for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
+# alias $command="sudo $command"
+#done; unset command
+
+alias display_colors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
+
+# date
+alias today='date +%F'
+alias tomorrow='date --date="tomorrow" +%F'
+
+#Add some flags to some basic commands that probably should be default
+#The aliases below with '-i' refer to asking for confirmation before
+#doing things with files; rm needs to have three or more files or have
+#the '-r' flag involved before asking for confirmation to delete.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	dust="dust -r" \
+	bc="bc -ql" \
+	exa="exa -xG --icons --group-directories-first" \
+	lsd="lsd --group-dirs first" \
+	mkdir="mkdir -pv" \
+	mkd="mkdir" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner" \
+	ln="ln -i" \
+	df='df -h'  \
+	free="free -m" \
+	fd="fd -H"
+
+# Colorize commands when possible.
+
+export GREP_OPTIONS='--color=auto'
+
+alias \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+	#ls="ls -hN --color=auto --group-directories-first" \
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	g="git" \
+	trem="transmission-remote" \
+	YT="youtube-viewer" \
+	sdn="shutdown -h now" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="pacman" \
+	xi="sudo xbps-install" \
+	xr="sudo xbps-remove -R" \
+	xq="xbps-query" \
+	z="zathura" \
+	yay="paru" \
+	fetch="fastfetch" \
+	neofetch="fastfetch" \
+	hx="helix"
+
+# Git related
+alias  \
+	gi='git init' \
+	gs='git status' \
+	gc='git commit' \
+	gcl='git clone' \
+	ga='git add' \
+	gd='git diff' \
+	gb='git branch' \
+	gl='git log' \
+	gsb='git show-branch' \
+	gco='git checkout' \
+	gg='git grep' \
+	gk='gitk --all' \
+	gr='git rebase' \
+	gri='git rebase --interactive' \
+	gcp='git cherry-pick' \
+	grm='git rm' \
+	gpush='git push' \
+	gpull='git pull' \
+	push='git push' \
+	pull='git pull'
+
+
+#Another variation of the one above
+alias \
+	..="cd .." \
+	...="cd ../.." \
+	....="cd ../../.." \
+	.....="cd ../../../.."
+
+
+# Common variations of 'ls' command
+alias \
+	ls="exa" \
+	ll="ls -l" \
+	la="ls -a" \
+	lla="ls -la" \
+	l="ls" \
+	s="ls" \
+	tree="ls -T"
+
+
+#For when you've spent too much time in DOS
+alias  \
+	cls="clear" \
+	cd..="cd .." \
+	del="rm"
+
+# Find out what is taking so much space on your drives
+alias diskspace="du -S | sort -n -r | less"
+
+#Tail all logs in /var/log
+alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+
+# Theming section  
+#Show active ports
+alias port='netstat -tulanp'
+
+#Uses 'nmap' to scan all of the connected devices on your router
+#You may need to change the '192.168.0.*' part to better match how your 
+#router gives addresses. This will not give you hostnames, only MAC 
+#addresses.
+alias lanscan='sudo nmap -sn 192.168.0.*'
+
+# dictionary
+alias \
+	dict="dict -d gcide" \
+	def="dict"
+
+alias tracert="traceroute"
+
+#Generate a random, "strong" (hopefully) password
+alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
+
+#Optimize mpv for playing just about anything in any environment
+alias mpv="mpv --vo=opengl,x11,drm,tct,caca --ao=pulse,alsa,jack --user-agent='Mozilla' --ytdl-format='best[ext=mp4][height<=?720]'"
+
+#Grab from YouTube
+alias \
+	yta-best="youtube-dl --extract-audio --audio-format best " \
+	yta-flac="youtube-dl --extract-audio --audio-format flac " \
+	yta-mp3="youtube-dl --extract-audio --audio-format mp3 " \
+	yta-wav="youtube-dl --extract-audio --audio-format wav " \
+	ytv-best="youtube-dl -f bestvideo+bestaudio " \
+	yt-best="ytv-best"
+
+# Some 'ps' command aliases...
+alias \
+	psa="ps auxf" \
+	psgrep="ps aux | grep --v grep | grep -i -e VSZ -e" \
+	psmem='ps auxf | sort -nr -k 4' \
+	pscpu='ps auxf | sort -nr -k 3'
+
+#rust alternatives
+alias \
+	pipes="pipes-rs" \
+	#find="fd"
+	#grep="rg" \
+	#cat="bat" \
+	#ps="procs" \
+	#sed="sd" \
+	#grex
+	#du="dust" \
+

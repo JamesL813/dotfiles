@@ -2,24 +2,16 @@
 cd $HOME
 ln -s .config/dotfiles/zsh/zshenv .zshenv
 ln -s .config/dotfiles/vimrc .vimrc
-cd .config
+cd $XDG_CONFIG_HOME
 
 # zsh
-mkdir zsh
-cd zsh
-ln -s ../dotfiles/zsh/zshrc .zshrc
-ln -s ../dotfiles/zsh/p10k.zsh .p10k.zsh
-cd ..
+ln -s dotfiles/zsh zsh
 
 # lf
-ln -s ../dotfiles/lf lf
+ln -s dotfiles/lf lf
 
 # neovim
-mkdir nvim
-cd nvim
-rm init.vim
-ln -s ../dotfiles/nvim/init.vim init.vim
-cd ..
+ln -s dotfiles/nvim nvim
 
 # starship
 ln -s dotfiles/starship.toml starship.toml

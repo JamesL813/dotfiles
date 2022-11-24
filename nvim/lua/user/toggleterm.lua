@@ -63,6 +63,12 @@ function _HTOP_TOGGLE()
 	htop:toggle()
 end
 
+local btm = Terminal:new({ cmd = "btm", hidden = true })
+
+function _BTM_TOGGLE()
+	btm:toggle()
+end
+
 local python = Terminal:new({ cmd = "python", hidden = true })
 
 function _PYTHON_TOGGLE()

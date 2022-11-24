@@ -8,12 +8,12 @@ local hide_in_width = function()
 end
 
 local diagnostics = {
-	"dagnostics",
-	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn" },
+	"diagnostics",
+	-- sources = { "nvim_diagnostic" },
+	-- sections = { "error", "warn" },
 	symbols = { error = " ", warn = " ", info = " ", hint = " " },
 	colored = true,
-	update_in_insert = false,
+	update_in_insert = true,
 }
 
 local diff = {
@@ -21,7 +21,7 @@ local diff = {
 	colored = true,
 	-- changes diff symbols
 	symbols = { added = " ", modified = " ", removed = " " },
-	cond = hide_in_width,
+	-- cond = hide_in_width,
 }
 
 local mode = {
@@ -60,23 +60,38 @@ local location = {
 }
 
 -- cool function for progress
-local progress = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "  ", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[10 - index]
-end
+local progress = {
+	function()
+		local current_line = vim.fn.line(".")
+		local total_lines = vim.fn.line("$")
+		local chars = {
+			"█  █",
+			"█▁▁█",
+			"█▂▂█",
+			"█▃▃█",
+			"█▄▄█",
+			"█▅▅█",
+			"█▆▆█",
+			"█▇▇█",
+			"████",
+		}
+		local line_ratio = current_line / total_lines
+		local index = math.ceil(line_ratio * #chars)
+		return chars[10 - index]
+	end,
+	padding = 0,
+}
 
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
+
 -- options { default , arrow , round , block █ }--------v
-local sep = require("user/icons").statusline_separators.round
+local sep = require("user/icons").statusline_separators.empty
 
 lualine.setup({
 	options = {
+		globalstatus = true,
 		icons_enabled = true,
 		theme = "auto",
 		section_separators = { left = sep.left, right = sep.right },
@@ -88,7 +103,7 @@ lualine.setup({
 		lualine_a = { mode },
 		lualine_b = { filename, filetype },
 		lualine_c = { branch, diff },
-		lualine_x = { diagnostics, "searchcount" },
+		lualine_x = { diagnostics, },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
