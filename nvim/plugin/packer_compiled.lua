@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/james/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["cellular-automaton.nvim"] = {
+    loaded = true,
+    path = "/home/james/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
+    url = "https://github.com/Eandrju/cellular-automaton.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/james/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -124,6 +129,16 @@ _G.packer_plugins = {
     path = "/home/james/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["duck.nvim"] = {
+    loaded = true,
+    path = "/home/james/.local/share/nvim/site/pack/packer/start/duck.nvim",
+    url = "https://github.com/tamton-aquib/duck.nvim"
+  },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/home/james/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/james/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -143,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/james/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lsp_lines.nvim"] = {
+    loaded = true,
+    path = "/home/james/.local/share/nvim/site/pack/packer/start/lsp_lines.nvim",
+    url = "https://github.com/Maan2003/lsp_lines.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

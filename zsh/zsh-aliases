@@ -58,7 +58,6 @@ alias \
 	z="zathura" \
 	yay="paru" \
 	fetch="fastfetch" \
-	neofetch="fastfetch" \
 	hx="helix"
 
 # Git related

@@ -18,7 +18,7 @@ local settings = {
 	ui = {
 		border = "none",
 		icons = {
-			package_installed = "",
+			package_installed = "",
 			package_pending = "ﳁ",
 			package_uninstalled = "",
 		},

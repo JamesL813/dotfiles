@@ -10,14 +10,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
 -- Normal --
 -- Move around splits using Alt + {h,j,k,l}
 keymap("n", "<A-h>", "<C-w>h", opts)
@@ -43,7 +35,6 @@ keymap("n", "<S-Tab>", "<<", opts) -- Unindent line
 
 -- keymap('n', ';', ':', { nowait = true })
 keymap("n", "<leader>v", "<cmd> vs <CR>", opts) -- vertical split
---keymap("n", "<leader><Tab>", "<cmd> bn <CR>", opts) -- vertical split
 
 -- Better window navigation
 keymap("n", "<A-h>", "<C-w>h", opts)
@@ -58,8 +49,6 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
---keymap("n", "<S-l>", ":bnext<CR>", opts)
---keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader><Tab>", ":bnext<CR>", opts)
 
 -- Move text up and down
@@ -88,10 +77,7 @@ keymap("v", "<S-Tab>", "<<<Esc>gv", opts) -- Unindent line
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
--- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
--- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
--- keymap("v", "p", '"_dP', opts)
+keymap("n", "<leader>d", ":lua require(\"duck\").hatch(\"🦀\")<CR>", opts)
 
 -- Visual Block --
 -- Move text up and down

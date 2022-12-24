@@ -9,18 +9,20 @@ local options = {
 	updatetime = 300, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 	hidden = true,
---	synmaxcol = 240,
+	--	synmaxcol = 240,
 	lazyredraw = true,
-	history = 100,
+	history = 300,
 
 	-- Tabs and Indentation --
 	expandtab = true, -- convert tabs to spaces
-	shiftwidth = 2, -- the number of spaces inserted for each indentation
-	tabstop = 2, -- insert 2 spaces for a tab
+	shiftwidth = 4, -- the number of spaces inserted for each indentation
+	tabstop = 4, -- insert 2 spaces for a tab
 	smartindent = true, -- make indenting smarter again
 	autoindent = true,
 	breakindent = true,
 	showbreak = "│", --"▎",--" ",
+    foldmethod = "indent",
+    foldlevel=99,
 
 	-- UI --
 	hlsearch = true, -- highlight all matches on previous search pattern
@@ -30,7 +32,7 @@ local options = {
 	mouse = "a", -- allow the mouse to be used in neovim
 	pumheight = 10, -- pop up menu height
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
-	showtabline = 2, -- always show tabs
+	-- showtabline = 2, -- always show tabs
 	smartcase = true, -- smart case
 	title = true,
 	splitbelow = true, -- force all horizontal splits to go below current window
@@ -43,8 +45,8 @@ local options = {
 	relativenumber = true, -- set relative numbered lines
 	numberwidth = 2, -- set number column width to 2 {default 4}
 	signcolumn = "auto", -- always show the sign column, otherwise it would shift the text each time
-	wrap = true, -- display lines as one long line
-	linebreak = true, -- companion to wrap, don't split words
+	wrap = false, -- display lines as one long line
+	linebreak = false, -- companion to wrap, don't split words
 	scrolloff = 12, -- minimal number of screen lines to keep above and below the cursor
 	sidescrolloff = 8, -- minimal number of screen columns either side of cursor if wrap is `false`
 	guifont = "monospace:h17", -- the font used in graphical neovim applications
@@ -58,4 +60,4 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+-- vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work

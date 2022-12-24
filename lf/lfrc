@@ -217,6 +217,7 @@ map . set hidden!
 
 
 map <enter> open
+map <esc> quit
 map R reload
 map mf mkfile
 map md mkdir
@@ -224,6 +225,12 @@ map D delete
 map E extract
 map C clear
 map R bulk-rename
+
+# dvorak
+#map h updir
+#map t down
+#map n up
+#map s open
 
 map J half-down
 map K half-up
