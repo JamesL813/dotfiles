@@ -1,33 +1,25 @@
 #!/bin/bash
 cd $HOME
+rm .zshenv
+rm .vimrc
 ln -s .config/dotfiles/zsh/zshenv .zshenv
 ln -s .config/dotfiles/vimrc .vimrc
-cd .config
+cd $XDG_CONFIG_HOME
 
 # zsh
-mkdir zsh
-cd zsh
-ln -s ../dotfiles/zsh/zshrc .zshrc
-cd ..
+rm -rf zsh
+ln -s dotfiles/zsh zsh
+
 # lf
-mkdir lf
-cd lf
-rm -f *
-ln -s ../dotfiles/lf/_lf _lf
-ln -s ../dotfiles/lf/colors colors
-ln -s ../dotfiles/lf/icons icons
-ln -s ../dotfiles/lf/lf.vim lf.vim
-ln -s ../dotfiles/lf/lfcd.sh lfcd.sh
-ln -s ../dotfiles/lf/lfrc lfrc
-ln -s ../dotfiles/lf/pv.sh pv.sh
-cd ..
+rm -rf lf
+ln -s dotfiles/lf lf
+
 # neovim
-mkdir nvim
-cd nvim
-rm init.vim
-ln -s ../dotfiles/nvim/init.vim init.vim
-cd ..
+rm -rf nvim
+ln -s dotfiles/nvim nvim
+
 # starship
+rm starship.toml
 ln -s dotfiles/starship.toml starship.toml
 
 # alacritty

@@ -1,0 +1,141 @@
+# Author: Shafkath Shuhan <shafkathshuhannyc@gmail.com>
+
+"namespace" = { fg = "dark_blue"}# "type" }
+"module" = { fg = "type" }
+
+"type" = { fg = "type" }
+"type.builtin" = { fg = "light_green" }
+"type.enum.variant" = { fg = "constant" }
+"constructor" = { fg = "type" }
+"variable.other.member" = { fg = "variable" }
+
+"keyword" = { fg = "blue2" }
+"keyword.directive" = { fg = "blue2" }
+"keyword.control" = { fg = "special" }
+"keyword.storage.modifier" = {fg = "dark_purple"}
+
+"label" = { fg = "blue2" }
+"tag" = "blue2"
+
+"special" = { fg = "text" }
+"operator" = { fg = "text" }
+
+"punctuation" = { fg = "text" }
+"punctuation.delimiter" = { fg = "text" }
+
+"variable" = { fg = "variable" }
+"variable.parameter" = { fg = "variable" }
+"variable.builtin" = { fg = "blue2" }
+"constant" = { fg = "constant" }
+"constant.builtin" = { fg = "blue2" }
+
+"function" = { fg = "fn_declaration" }
+"function.builtin" = { fg = "blue3"}# "fn_declaration" }
+"function.macro" = { fg = "blue2" }
+"attribute" = { fg = "blue3"}# "fn_declaration" }
+
+"comment" = { fg = "dark_gray" }
+
+"string" = { fg = "light_green" }
+"constant.character" = { fg = "orange" }
+"string.regexp" = { fg = "gold" }
+"constant.numeric" = { fg = "pale_green" }
+"constant.character.escape" = { fg = "gold" }
+
+"markup.heading" = { fg = "blue2", modifiers = ["bold"] }
+"markup.list" = "blue3"
+"markup.bold" = { fg = "blue2", modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { modifiers = ["underlined"] }
+"markup.link.text" = "orange"
+"markup.quote" = "dark_green"
+"markup.raw" = "orange"
+
+"diff.plus" = { fg = "light_green" }
+"diff.delta" = { fg = "gold" }
+"diff.minus" = { fg = "red" }
+
+"ui.background" = { fg = "light_gray", bg = "dark_gray2" }
+
+"ui.window" = { bg = "widget" }
+"ui.popup" = { fg = "text", bg = "widget" }
+"ui.help" = { fg = "text", bg = "widget" }
+"ui.menu" = { fg = "text", bg = "widget" }
+"ui.menu.selected" = { bg = "dark_blue2" }
+
+# TODO: Alternate bg colour for `ui.cursor.match` and `ui.selection`.
+"ui.cursor" = { fg = "cursor", modifiers = ["reversed"] }
+"ui.cursor.primary" = { fg = "cursor", modifiers = ["reversed"] }
+"ui.cursor.match" = { bg = "#3a3d41" }
+
+"ui.selection" = { bg = "#3a3d41" }
+"ui.selection.primary" = { bg = "dark_blue" }
+
+"ui.linenr" = { fg = "dark_gray" }
+"ui.linenr.selected" = { fg = "light_gray2" }
+
+"ui.cursorline.primary" = { bg = "dark_gray3" }
+"ui.statusline" = { fg = "white", bg = "dark_gray4" }
+"ui.statusline.inactive" = { fg = "white", bg = "dark_gray3" }
+"ui.statusline.normal" = { fg = "white", bg = "dark_green" }
+"ui.statusline.insert" = { fg = "white", bg = "blue" }
+"ui.statusline.select" = { fg = "white", bg = "dark_purple" }
+
+"ui.text" = { fg = "text" }
+"ui.text.focus" = { fg = "white" }
+
+"ui.virtual.whitespace" = { fg = "dark_gray" }
+"ui.virtual.ruler" = { bg = "borders" }
+"ui.virtual.indent-guide" = { fg = "dark_gray4" }
+
+"warning" = { fg = "gold2" }
+"error" = { fg = "red" }
+"info" = { fg = "light_blue" }
+"hint" = { fg = "light_gray3" }
+
+diagnostic = { modifiers = ["underlined"] }
+
+[palette]
+white = "#ffffff"
+
+orange = "#ce9178"
+light_orange = "#FFBE6F"
+gold = "#d7ba7d"
+gold2 = "#cca700"
+
+light_green = "#8FF0A4"
+pale_green = "#b5cea8"
+dark_green = "#26A269"
+
+light_gray = "#d4d4d4"
+light_gray2 = "#c6c6c6"
+light_gray3 = "#eeeeee"
+
+dark_gray = "#858585"
+dark_gray2 = "#1c1c1c"
+dark_gray3 = "#282828"
+dark_gray4 = "#404040"
+
+blue = "#007acc"
+blue2 = "#569CD6"
+blue3 = "#6796E6"
+light_blue = "#62A0EA"
+dark_blue = "#264f78"
+dark_blue2 = "#094771"
+
+purple = "#C061CB"
+dark_purple = "#9141AC"
+
+red = "#ED333B"
+
+type = "#2EC27E"
+special = "#C586C0"
+variable = "#DCDCAA"
+fn_declaration = "#99C1F1"
+constant = "#4FC1FF"
+
+background = "#1e1e1e"
+text = "#d4d4d4"
+cursor = "#a6a6a6"
+widget = "#252526"
+borders = "#323232"

@@ -26,7 +26,7 @@ set ifs "\n"
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 set icons
-set drawbox
+# set drawbox
 set incsearch
 set smartcase
 set ignorecase
@@ -53,6 +53,15 @@ set dircounts on
 # set terminal title to current working directory
 cmd on-cd &{{
 	printf "\033]0; $PWD\007" > /dev/tty
+	    source /usr/share/git/completion/git-prompt.sh
+    GIT_PS1_SHOWDIRTYSTATE=auto
+    GIT_PS1_SHOWSTASHSTATE=auto
+    GIT_PS1_SHOWUNTRACKEDFILES=auto
+    GIT_PS1_SHOWUPSTREAM=auto
+    GIT_PS1_COMPRESSSPARSESTATE=auto
+    git=$(__git_ps1 " [GIT BRANCH:> %s]") || true
+    fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m$git\033[0m"
+    lf -remote "send $id set promptfmt \"$fmt\""
 }}
 
 # set previewer with env vars
@@ -129,7 +138,7 @@ cmd zip ${{
     rm -rf $1
 }}
 
-cmd delete ${{
+cmd delete %{{
   set -f
   printf "\n$fx\n"
   printf "delete?[y/N]"
@@ -187,6 +196,13 @@ cmd copy-absolute-path ${{
   echo $fx | tr ' ' '\n' | pbcopy
 }}
 
+cmd git_branch ${{
+    git branch | fzf | xargs git checkout
+    pwd_shell=$(pwd)
+    lf -remote "send $id updir"
+    lf -remote "send $id cd \"$pwd_shell\""
+}}
+
 # ========== Mappings ==========
 
 # Remove some defaults
@@ -201,6 +217,7 @@ map . set hidden!
 
 
 map <enter> open
+map <esc> quit
 map R reload
 map mf mkfile
 map md mkdir
@@ -208,6 +225,15 @@ map D delete
 map E extract
 map C clear
 map R bulk-rename
+
+# dvorak
+#map h updir
+#map t down
+#map n up
+#map s open
+
+map J half-down
+map K half-up
 
 # execute current file (must be executable)
 map x $$f
@@ -225,14 +251,22 @@ map yp copy-absolute-path
 map [ push hkl
 map ] push hjl
 
+# git
+map G
+map Gb :git_branch
+map Gp ${{clear; git pull --rebase || true; echo "press ENTER"; read ENTER}}
+map Gs ${{clear; git status; echo "press ENTER"; read ENTER}}
+map Gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
 
 # Fast navigation
-map Jh cd ~
-map Jd cd ~/Documents
-map JD cd ~/Downloads
-map Jg cd ~/gitrepos
-map Jp cd ~/Projects
-map J. cd ~/.config/dotfiles
-map Jv cd ~/.config/dotfiles/nvim
-map Jz cd ~/.config/dotfiles/zsh
+map gh cd ~
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map gg cd ~/gitrepos
+map gp cd ~/Projects
+map gs cd ~/School
+map g. cd ~/.config/dotfiles
+map gl cd ~/.local/share
+map gv cd ~/.config/dotfiles/nvim
+map gz cd ~/.config/dotfiles/zsh
 

@@ -1,13 +1,46 @@
-#!/bin/zsh
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+#!/bin/sh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+# from manjaro config
+setopt correct                                                  # Auto correct mistakes
+setopt numericglobsort                                          # Sort filenames numerically when it makes sense
+setopt nobeep                                                   # No beep
+
+setopt appendhistory                                            # Immediately append history instead of overwriting
+setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+setopt autocd                                                   # if only directory path is entered, cd there.
+setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
+setopt histignorespace                                          # Don't save commands that start with space
+
+source "$ZDOTDIR/zsh-aliases"
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+# Speed up completions
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh
+HISTSIZE=10000
+SAVEHIST=10000
+
+
+WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
+
+# Offer to install missing package if command is not found
+if [[ -r /usr/share/zsh/functions/command-not-found.zsh ]]; then
+    source /usr/share/zsh/functions/command-not-found.zsh
+    export PKGFILE_PROMPT_INSTALL_MISSING=1
+fi
 
 # Use powerline
-USE_POWERLINE="true"
+# USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
@@ -33,11 +66,36 @@ fi
 source /home/james/.config/lf/lfcd.sh
 
 # Navigation
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey '^[[1;5C' emacs-forward-word
-bindkey '^[^[[D' emacs-backward-word
-bindkey '^H' backward-kill-word
+
+## Keybindings section
+bindkey -e
+bindkey '^[[7~' beginning-of-line                               # Home key
+bindkey '^[[H' beginning-of-line                                # Home key
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
+fi
+bindkey '^[[8~' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                     # End key
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
+fi
+bindkey '^[[2~' overwrite-mode                                  # Insert key
+bindkey '^[[3~' delete-char                                     # Delete key
+bindkey '^[[C'  forward-char                                    # Right key
+bindkey '^[[D'  backward-char                                   # Left key
+# bindkey '^[[5~' history-beginning-search-backward               # Page up key
+# bindkey '^[[6~' history-beginning-search-forward                # Page down key
+
+# Navigate words with ctrl+arrow keys
+bindkey '^[Oc' forward-word                                     #
+bindkey '^[Od' backward-word                                    #
+bindkey '^[[1;5D' backward-word                                 #
+bindkey '^[[1;5C' forward-word                                  #
+bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
+bindkey '^[[Z' undo                                             # Shift+tab undo last action
+
+alias \
+	lf="lfcd"
 
 # Use manjaro zsh prompt
 #if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
@@ -47,89 +105,33 @@ bindkey '^H' backward-kill-word
 # Use $XINITRC variable if file exists.
 [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
 
-#lf
 
-# sudo not required for some system commands
-#for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
-#	alias $command="sudo $command"
-#done; unset command
+autoload -U compinit colors zcalc
+compinit -d
+colors
 
+# Color man pages
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS=-R
 
-#Add some flags to some basic commands that probably should be default
-#The aliases below with '-i' refer to asking for confirmation before
-#doing things with files; rm needs to have three or more files or have
-#the '-r' flag involved before asking for confirmation to delete.
-alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	dust="dust -r" \
-	bc="bc -ql" \
-	exa="exa -xG --icons --group-directories-first" \
-	lsd="lsd --group-dirs first" \
-	mkdir="mkdir -pv" \
-	mkd="mkdir" \
-	yt="youtube-dl --add-metadata -i" \
-	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner" \
-	ln="ln -i" \
-	df='df -h'  \
-	free="free -m" \
-	fd="fd -H"
-	vim='nvim'
-	vi='nvim'
+## Plugins section: Enable fish style features
+# bind UP and DOWN arrow keys to history substring search
+zmodload zsh/terminfo
+#bindkey "$terminfo[kcuu1]" history-substring-search-up
+#bindkey "$terminfo[kcud1]" history-substring-search-down
+#bindkey '^[[A' history-substring-search-up			
+#bindkey '^[[B' history-substring-search-down
 
-# Colorize commands when possible.
+# todo.txt
+export TODOTXT_DEFAULT_ACTION=ls
+alias todo='todo.sh -td $XDG_CONFIG_HOME/todo/todo.cfg'
 
-export GREP_OPTIONS='--color=auto'
-
-alias \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
-	#ls="ls -hN --color=auto --group-directories-first" \
-
-# These common commands are just too long! Abbreviate them.
-alias \
-	ka="killall" \
-	g="git" \
-	trem="transmission-remote" \
-	YT="youtube-viewer" \
-	sdn="shutdown -h now" \
-	e="$EDITOR" \
-	v="$EDITOR" \
-	p="pacman" \
-	xi="sudo xbps-install" \
-	xr="sudo xbps-remove -R" \
-	xq="xbps-query" \
-	z="zathura" \
-	yay="paru"
-
-# Git related
-alias  \
-	gi='git init' \
-	gs='git status' \
-	gc='git commit' \
-	gcl='git clone' \
-	ga='git add' \
-	gd='git diff' \
-	gb='git branch' \
-	gl='git log' \
-	gsb='git show-branch' \
-	gco='git checkout' \
-	gg='git grep' \
-	gk='gitk --all' \
-	gr='git rebase' \
-	gri='git rebase --interactive' \
-	gcp='git cherry-pick' \
-	grm='git rm' \
-	gpush='git push' \
-	gpull='git pull' \
-	push='git push' \
-	pull='git pull'
-
-
-# Find out what is taking so much space on your drives
-alias diskspace="du -S | sort -n -r | less"
 
 # Easy way to extract archives
 extract () {
@@ -159,33 +161,13 @@ function 7zip() { 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on -mhe=on "$2" "
 
 # Move 'up' so many directories instead of using several cd ../../, etc.
 up() { cd $(eval printf '../'%.0s {1..$1}) && pwd; }
-
-#Another variation of the one above
-alias \
-	..="cd .." \
-	...="cd ../.." \
-	....="cd ../../.." \
-	.....="cd ../../../.."
-
-
-# Common variations of 'ls' command
-alias \
-	ls="exa" \
-	ll="ls -l" \
-	la="ls -a" \
-	lla="ls -la" \
-	l="ls" \
-	s="ls" \
-	tree="ls -T"
-
 #List people in a Twitch channel chat
 function twitch_list() { curl -s "https://tmi.twitch.tv/group/user/$1/chatters" | less; }
 
-#Nano for writing and spell-checking
+# Nano for writing and spell-checking
 function spellcheck() { aspell -c "$1"; }
 function spell() { echo "$1" | aspell -a; }
-alias nano="nano -m -u -c -W --tabsize=4 --autoindent"
-alias writer="nano -m -u -c -W -l --tabsize=4 --fill=85 --autoindent --smooth"
+# alias nano="nano -m -u -c -W --tabsize=4 --autoindent"
 
 # Print a word from a certain column of the output when piping.
 # Example: cat /path/to/file.txt | fawk 2 --> Print every 2nd word in each line.
@@ -195,11 +177,6 @@ function fawk {
     cmd="${first}\$${1}${last}"
     eval $cmd
 }
-
-#Tail all logs in /var/log
-alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
-
-# Colors for All grep commands such as grep, egrep and zgrep
 
 
 # 'cd' to the most recently modified directory in $PWD
@@ -227,30 +204,12 @@ crd(){
 
 # 'cd' into a directory and then list contents
 cdls() { cd "$1"; ls;}
-
-#For when you've spent too much time in DOS
-alias  \
-	cls="clear" \
-	cd..="cd .." \
-	del="rm"
 	
 diskcopy(){ dd if="$1" of="$2" ; }
-alias tracert="traceroute"
-
-#Generate a random, "strong" (hopefully) password
-alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
 
 #List by file size in current directory
 sbs() { du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';} 
 
-#Show active ports
-alias port='netstat -tulanp'
-
-#Uses 'nmap' to scan all of the connected devices on your router
-#You may need to change the '192.168.0.*' part to better match how your 
-#router gives addresses. This will not give you hostnames, only MAC 
-#addresses.
-alias lanscan='sudo nmap -sn 192.168.0.*'
 
 #Kill any lingering SSH processes
 function sshkill() { ps aux | grep ssh | grep -v grep | grep -v sshd | awk {'print $2'} | xargs -r kill -9; }
@@ -330,11 +289,6 @@ function 2ico() { fname="${1%.*}"; convert -background transparent "$1" -define 
 #Tonvid is a YouTube frontend and this helps for when copy/paste text isn't possible.
 function tonvid() { mpv --vo=opengl,x11,drm,tct,caca --ao=pulse,alsa --ytdl-format="[ext=mp4][height<=?720]" http://tonvid.com/info.php?video_id=$1; }
 
-# dictionary
-alias \
-	dict="dict -d gcide" \
-	def="dict"
-
 #Grab a pretty ascii forecast picture for anywhere; without arguments, 
 #uses ISP location to print your weather. Example: weather New York, NY
 function weather() { curl -s http://wttr.in/$1; }
@@ -342,8 +296,6 @@ function weather() { curl -s http://wttr.in/$1; }
 #Convert hex data file to a binary
 function hex2bin() { s=${@^^}; for i in $(seq 0 1 $((${#s}-1))); do printf "%04s" `printf "ibase=16; obase=2; ${s:$i:1};\n" | bc` ; done; printf "\n"; }
 
-#Create a randomized playlist for audio and video recursively
-alias playlist="find -D tree . | sort -R --random-source=/dev/urandom > playlist.m3u"
 
 #Play Twitch streams with MPV in GUI or TTY
 #Use as: twitch username
@@ -356,8 +308,6 @@ function stream() { streamlink -p "mpv --vo=opengl,x11,drm,tct,caca --ao=pulse,a
 function webplay() { ffplay -vf scale=720x480 "$(youtube-dl -g $1)"; }
 function webplayer() { ffplay -vf scale=720x480 "$(youtube-dl -g $1)"; }
 
-#Optimize mpv for playing just about anything in any environment
-alias mpv="mpv --vo=opengl,x11,drm,tct,caca --ao=pulse,alsa,jack --user-agent='Mozilla' --ytdl-format='best[ext=mp4][height<=?720]'"
 
 #Play last viewed, or attempted to view video from Kodi using mpv; may not work due to CDN.
 function mpvkodi() { URL="$(grep 'mp4' ~/.kodi/temp/kodi.log | awk '{print $6}' | cut -d '|' -f1 | tail -n 1)"; mpv "$URL"; }
@@ -454,37 +404,20 @@ function far(){
 	rg -il $1 | xargs sd -f i $1 $2
 }
 
-#Grab from YouTube
-alias \
-	yta-best="youtube-dl --extract-audio --audio-format best " \
-	yta-flac="youtube-dl --extract-audio --audio-format flac " \
-	yta-mp3="youtube-dl --extract-audio --audio-format mp3 " \
-	yta-wav="youtube-dl --extract-audio --audio-format wav " \
-	ytv-best="youtube-dl -f bestvideo+bestaudio " \
-	yt-best="ytv-best"
 
-# Some 'ps' command aliases...
-alias \
-	psa="ps auxf" \
-	psgrep="ps aux | grep --v grep | grep -i -e VSZ -e" \
-	psmem='ps auxf | sort -nr -k 4' \
-	pscpu='ps auxf | sort -nr -k 3'
-
-#rust alternatives
-alias \
-	pipes="pipes-rs" \
-	find="fd"
-	#grep="rg" \
-	#cat="bat" \
-	#ps="procs" \
-	#sed="sd" \
-	#grex
-	#du="dust" \
-
-alias \
-	lf="lfcd"
 
 export BAT_THEME="base16"
 
-eval "$(starship init zsh)"
 
+
+
+#eval "$(starship init zsh)"
+
+if [[ -e /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+precmd () {print -Pn "\e]0;\a"}

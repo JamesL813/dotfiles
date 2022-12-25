@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 autoload -Uz compinit
 compinit
@@ -11,6 +11,9 @@ export XDG_STATE_HOME=$HOME'/.local/state'
 export EDITOR='/usr/bin/nvim'
 export ZDOTDIR=$XDG_CONFIG_HOME'/zsh'
 export HISTFILE=$XDG_STATE_HOME'/zsh/history'
+export TODO_DIR=$XDG_DATA_HOME'/todo'
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 export CARGO_HOME=$XDG_DATA_HOME'/cargo'
@@ -24,6 +27,7 @@ alias irssi="irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HO
 #
 export WINIT_UNIX_BACKEND=x11
 
+export PATH=$PATH':'$HOME'/.local/bin'
 # playdate
 export PLAYDATE_SDK_PATH=$XDG_DATA_HOME'/PlaydateSDK-1.9.3'
 export PATH=$PATH':'$PLAYDATE_SDK_PATH'/bin'

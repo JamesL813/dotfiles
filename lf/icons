@@ -23,17 +23,28 @@
 ln             # LINK
 or             # ORPHAN
 tw      t       # STICKY_OTHER_WRITABLE
+<<<<<<< HEAD
 ow             # OTHER_WRITABLE
 st      t       # STICKY
 di             # DIR
+=======
+ow             # OTHER_WRITABLE
+st      t       # STICKY
+di             # DIR
+>>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
 cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
+<<<<<<< HEAD
 ex      異      # EXEC
 fi             # FILE
+=======
+ex             # EXEC
+fi             # FILE
+>>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
 
 # file extensions (vim-devicons)
 *.styl          
@@ -76,6 +87,7 @@ fi             # FILE
 *.toml          
 *.bat           
 *.mk            
+<<<<<<< HEAD
 *.jpg           
 *.jpeg          
 *.bmp           
@@ -83,6 +95,15 @@ fi             # FILE
 *.webp          
 *.gif           
 *.ico           
+=======
+*.jpg           
+*.jpeg          
+*.bmp           
+*.png           
+*.webp          
+*.gif           
+*.ico           
+>>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
 *.twig          
 *.cpp           
 *.c++           
@@ -241,6 +262,7 @@ Vagrantfile             
 
 # archives or compressed (extensions from dircolors defaults)
 *.tar   遲
+<<<<<<< HEAD
 *.tgz   遲
 *.arc   遲
 *.arj   遲
@@ -355,6 +377,122 @@ Vagrantfile             
 *.opus  
 *.spx   
 *.xspf  
+=======
+*.tgz   
+*.arc   
+*.arj   
+*.taz   
+*.lha   
+*.lz4   
+*.lzh   
+*.lzma  
+*.tlz   
+*.txz   
+*.tzo   
+*.t7z   
+*.zip   遲
+*.z     
+*.dz    
+*.gz    
+*.lrz   
+*.lz    
+*.lzo   
+*.xz    
+*.zst   
+*.tzst  
+*.bz2   
+*.bz    
+*.tbz   
+*.tbz2  
+*.tz    
+*.deb   
+*.rpm   
+*.jar   
+*.war   
+*.ear   
+*.sar   
+*.rar   
+*.alz   
+*.ace   
+*.zoo   
+*.cpio  
+*.7z    
+*.rz    
+*.cab   
+*.wim   
+*.swm   
+*.dwm   
+*.esd   
+
+# image formats (extensions from dircolors defaults)
+*.jpg   
+*.jpeg  
+*.mjpg  
+*.mjpeg 
+*.gif   
+*.bmp   
+*.pbm   
+*.pgm   
+*.ppm   
+*.tga   
+*.xbm   
+*.xpm   
+*.tif   
+*.tiff  
+*.png   
+*.svg   
+*.svgz  
+*.mng   
+*.pcx   
+*.mov   
+*.mpg   
+*.mpeg  
+*.m2v   
+*.mkv   
+*.webm  
+*.ogm   
+*.mp4   
+*.m4v   
+*.mp4v  
+*.vob   
+*.qt    
+*.nuv   
+*.wmv   
+*.asf   
+*.rm    
+*.rmvb  
+*.flc   
+*.avi   
+*.fli   
+*.flv   
+*.gl    
+*.dl    
+*.xcf   
+*.xwd   
+*.yuv   
+*.cgm   
+*.emf   
+*.ogv   
+*.ogx   
+
+# audio formats (extensions from dircolors defaults)
+*.aac   
+*.au    
+*.flac  
+*.m4a   
+*.mid   
+*.midi  
+*.mka   
+*.mp3   
+*.mpc   
+*.ogg   
+*.ra    
+*.wav   
+*.oga   
+*.opus  
+*.spx   
+*.xspf  
+>>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
 
 # other formats
 *.pdf   
