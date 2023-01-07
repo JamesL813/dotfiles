@@ -267,6 +267,7 @@ map gp cd ~/Projects
 map gs cd ~/School
 map g. cd ~/.config/dotfiles
 map gl cd ~/.local/share
+map gr cd /
 map gv cd ~/.config/dotfiles/nvim
 map gz cd ~/.config/dotfiles/zsh
 

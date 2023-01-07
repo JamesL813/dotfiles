@@ -1,4 +1,4 @@
-
+#!/bin/sh
 
 # sudo not required for some system commands
 #for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
@@ -39,7 +39,8 @@ export GREP_OPTIONS='--color=auto'
 
 alias \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
+	ccat="highlight --out-format=ansi" \
+    ip="ip -c"
 	#ls="ls -hN --color=auto --group-directories-first" \
 
 # These common commands are just too long! Abbreviate them.
