@@ -18,6 +18,7 @@ setopt autocd                                                   # if only direct
 setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
 setopt histignorespace                                          # Don't save commands that start with space
 
+
 source "$ZDOTDIR/zsh-aliases"
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
