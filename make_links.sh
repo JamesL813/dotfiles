@@ -4,6 +4,7 @@ rm .zshenv
 rm .vimrc
 ln -s .config/dotfiles/zsh/zshenv .zshenv
 ln -s .config/dotfiles/vimrc .vimrc
+ln -s .config/dotfiles/xinitrc .xinitrc
 cd $XDG_CONFIG_HOME
 
 # zsh

@@ -11,6 +11,8 @@ alias display_colors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0
 alias today='date +%F'
 alias tomorrow='date --date="tomorrow" +%F'
 
+function cd() { builtin cd $1; echo -ne "\033]0;`echo ${PWD#"${PWD%/*/*}/"}`\007"; }
+
 #Add some flags to some basic commands that probably should be default
 #The aliases below with '-i' refer to asking for confirmation before
 #doing things with files; rm needs to have three or more files or have
@@ -53,10 +55,6 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="pacman" \
-	xi="sudo xbps-install" \
-	xr="sudo xbps-remove -R" \
-	xq="xbps-query" \
-	z="zathura" \
 	yay="paru" \
 	fetch="fastfetch" \
 	hx="helix"
@@ -92,6 +90,9 @@ alias \
 	....="cd ../../.." \
 	.....="cd ../../../.."
 
+
+alias \
+	lf="lfcd"
 
 # Common variations of 'ls' command
 alias \

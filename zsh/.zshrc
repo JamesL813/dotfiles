@@ -330,10 +330,10 @@ function boot486() { qemu-system-i386 -cpu 486 -cdrom "$1" -boot d -m "$2" ; }
 #Use curl and "https://cht.sh/" to quickly search how to do things
 #Examples: 'howin html do I view an image'
 #          'howin python do I add numbers'
-howin() {
-    where="$1"; shift
-    IFS=+ curl "https://cht.sh/$where/$*"
-}
+# howin() {
+#     where="$1"; shift
+#     IFS=+ curl "https://cht.sh/$where/$*"
+# }
 
 #Create lists from multi-line output
 function list() { awk 'BEGIN { ORS="" } { print p"'"'"'"$0"'"'"'"; p=", " } END { print "\n" }' ; }
@@ -410,6 +410,7 @@ function far(){
 export BAT_THEME="base16"
 
 
+# precmd () {print -Pn "\e]0;\a"}
 
 
 #eval "$(starship init zsh)"
@@ -420,5 +421,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+cd
 
-precmd () {print -Pn "\e]0;\a"}
+# source /home/james/.config/broot/launcher/bash/br
