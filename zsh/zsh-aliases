@@ -55,6 +55,7 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
 	p="pacman" \
+	py="python" \
 	yay="paru" \
 	fetch="fastfetch" \
 	hx="helix"
