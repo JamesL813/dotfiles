@@ -421,6 +421,7 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-cd
+
+echo -ne "\033]0;`echo Terminal`\007"
 
 # source /home/james/.config/broot/launcher/bash/br

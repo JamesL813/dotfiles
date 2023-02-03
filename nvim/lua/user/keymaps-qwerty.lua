@@ -33,7 +33,10 @@ keymap("n", "U", "<C-R>", opts) -- redo is U
 keymap("n", "<TAB>", ">>", opts) -- Indent line
 keymap("n", "<S-Tab>", "<<", opts) -- Unindent line
 
--- keymap('n', ';', ':', { nowait = true })
+keymap('n', 'm', 'J', opts)
+keymap('n', 'M', 'm', opts)
+
+keymap('n', ';', ':', opts)
 keymap("n", "<leader>v", "<cmd> vs <CR>", opts) -- vertical split
 
 -- Better window navigation
