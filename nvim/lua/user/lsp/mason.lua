@@ -9,7 +9,6 @@ local servers = {
 	"marksman",
 	"pyright",
 	"rust_analyzer",
-	"sumneko_lua",
 	"texlab",
 	"yamlls",
 }

@@ -58,6 +58,9 @@ keymap("n", "<leader><Tab>", ":bnext<CR>", opts)
 -- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 -- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Compiling
+keymap("n", "<leader><k>", ":!pdflatex %:p", opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)

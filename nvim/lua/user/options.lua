@@ -52,10 +52,22 @@ local options = {
 	guifont = "monospace:h17", -- the font used in graphical neovim applications
 }
 
+local gui = {
+    transparent_background = true,        -- transparent background(Default: false)
+    italic_comments = true,               -- italic comments(Default: true)
+    italic_keywords = true,               -- italic keywords(Default: true)
+    italic_functions = true,              -- italic functions(Default: false)
+    italic_variables = true,              -- italic variables(Default: false)
+}
+
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
+end
+
+for k, v in pairs(gui) do
+	vim.g[k] = v
 end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
