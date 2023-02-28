@@ -2,7 +2,7 @@
 
 # Enable colors and change prompt:
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
 HISTSIZE=10000
@@ -64,9 +64,11 @@ bindkey -s '^o' 'lfcd\n'
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+
 # Load aliases and shortcuts if existent.
 [ -f "$XDG_CONFIG_HOME/zsh/aliases" ] && source "$XDG_CONFIG_HOME/zsh/aliases"
 [ -f "$XDG_CONFIG_HOME/zsh/keybinds" ] && source "$XDG_CONFIG_HOME/zsh/keybinds"
+[ -f "$XDG_CONFIG_HOME/zsh/options" ] && source "$XDG_CONFIG_HOME/zsh/options"
 
 # starship
 function set_win_title(){
