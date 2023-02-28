@@ -1,0 +1,356 @@
+
+
+# Shapes                           
+#u'\uE0A2'
+
+#$username\
+
+#colors
+
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$fill\
+$vcsh\
+$hg_branch\
+$docker_context\
+$package\
+$buf\
+$cmake\
+$cobol\
+$container\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$sudo\
+$cmd_duration\
+$jobs\
+$battery\
+$status\
+[\n ❯ ](fg:bright-blue)\
+$shell"""
+
+# A continuation prompt that displays two filled in arrows
+#continuation_prompt = ""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:bright-blue"
+style_root = "bg:bright-blue"
+format = "[ ](fg:bright-blue)[ $user]($style)[](fg:bright-blue bg:blue)"
+# format = '[$user ]($style)'
+
+[directory]
+style = "bg:blue fg:bright-white"
+format = "[ $path]($style)[](fg:blue)"
+truncation_length = 4
+truncation_symbol = "  "
+read_only = ""
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](bold red)" # used if previous command failed
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"~" = " "
+"/" = "  "
+
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[git_branch]
+symbol = " "
+style = "bg:bright-purple"
+format = '[](fg:bright-purple)[ $symbol $branch]($style)[ ](fg:purple bg:bright-purple)'
+
+[git_status]
+ahead = " ${count}"
+diverged = " ${ahead_count}  ${behind_count}"
+behind = " ${count}"
+up_to_date = ""
+style = "bg:purple"
+format = '[[($all_status$ahead_behind)](bg:purple)]($style)[ ](fg:purple)'
+
+[cmd_duration]
+style = "bg:blue"
+format = '[](fg:blue)[⏱ $duration ]($style)[ ](fg:blue)'
+
+[fill]
+symbol = " "
+style = "black"
+
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+
+[nodejs]
+symbol = ""
+style = "bg:blue"
+format = '[](fg:blue)[ $symbol ]($style)[ ](fg:blue)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:black fg:bright-white"
+format = '[](fg:black)[ $time ]($style)[ ](fg:black)'
+
+[aws]
+symbol = "  "
+format = '[$symbol($profile)(\($region\))($duration)]($style)'
+
+[conda]
+style = "bg:#33658A"
+format = '[$symbol$environment]($style)'
+symbol = " "
+
+[dart]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+symbol = " "
+
+[docker_context]
+style = "bg:#33658A"
+format = '[$symbol$context]($style)'
+symbol = " "
+
+[elixir]
+style = "bg:#33658A"
+format = '[$symbol($version \(OTP $otp_version\))]($style)'
+symbol = " "
+
+[elm]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+symbol = " "
+
+[golang]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+symbol = " "
+
+[hg_branch]
+style = "bg:#33658A"
+format = '[$symbol$branch]($style)'
+symbol = " "
+
+[java]
+style = "bg:bright-red"
+format = '[](fg:bright-red)[$symbol $version]($style)[ ](fg:bright-red)'
+symbol = " "
+
+[julia]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+symbol = " "
+
+[memory_usage]
+style = "bg:#33658A"
+format = '$symbol[$ram( | $swap)]($style)'
+symbol = " "
+
+[nim]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+symbol = " "
+
+[nix_shell]
+style = "bg:#33658A"
+format = '[$symbol$state( \($name\))]($style)'
+symbol = " "
+
+[package]
+style = "bg:#33658A"
+format = '[](fg:#33658A)[$symbol $version]($style)[ ](fg:#33658A)'
+symbol = " "
+
+[cmake]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[cobol]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[crystal]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[deno]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[dotnet]
+style = "bg:#33658A"
+format = '[$symbol(🎯 $tfm)]($style)'
+
+[erlang]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[gcloud]
+style = "bg:#33658A"
+format = '[$symbol$account(@$domain)(\($region\))]($style)'
+
+[helm]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[jobs]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[kotlin]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[kubernetes]
+style = "bg:#33658A"
+format = '[$symbol$context( \($namespace\))]($style)'
+
+[lua]
+style = "bg:blue"
+format = '[](fg:blue)[$symbol $version]($style)[ ](fg:blue)'
+
+[ocaml]
+style = "bg:#33658A"
+format = '[$symbol(\($switch_indicator$switch_name\))]($style)'
+
+[openstack]
+style = "bg:#33658A"
+format = '[$symbol$cloud(\($project\))]($style)'
+
+[perl]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[php]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[pulumi]
+style = "bg:#33658A"
+format = '[$symbol$stack]($style)'
+
+[purescript]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[python]
+symbol = ""
+style = "bg:blue fg:bright-yellow"
+format = '[](fg:blue)[${symbol} ${pyenv_prefix}(${version})(\($virtualenv\))]($style)[ ](fg:blue)'
+
+[red]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[rlang]
+symbol = "R "
+style = "bg:blue"
+format = '[](fg:blue)[$symbol $version]($style)[ ](fg:blue)'
+
+[ruby]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[rust]
+symbol = ""
+style = "bg:yellow"
+format = '[](fg:yellow)[$symbol $version]($style)[ ](fg:yellow)'
+
+[scala]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[status]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[sudo]
+style = "bg:#33658A"
+format = '[as $symbol]'
+
+[swift]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[terraform]
+style = "bg:#33658A"
+format = '[$symbol$workspace]($style)'
+
+[vagrant]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[vlang]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+[zig]
+style = "bg:#33658A"
+format = '[$symbol]($style)'
+
+

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd $HOME
 rm .zshenv
 rm .vimrc

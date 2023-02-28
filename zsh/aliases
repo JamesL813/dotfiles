@@ -1,0 +1,106 @@
+#!/bin/sh
+
+
+# Basic flags
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	dust="dust -r" \
+	exa="exa -xG --icons --group-directories-first" \
+	mkdir="mkdir -pv" \
+	mkd="mkdir" \
+	ln="ln -i" \
+	df='df -h'  \
+	fd="fd -H"
+
+
+# Colorize commands when possible.
+export GREP_OPTIONS='--color=auto'
+
+alias \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+    ip="ip -c"
+	#ls="ls -hN --color=auto --group-directories-first" \
+
+
+# shortened commands
+alias \
+	ka="killall" \
+	g="git" \
+	trem="transmission-remote" \
+	YT="youtube-viewer" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="pacman" \
+	py="python" \
+	yay="paru" \
+	ffetch="fastfetch" \
+	hx="helix"
+
+
+
+# Git related
+alias  \
+	gi='git init' \
+	gs='git status' \
+	gc='git commit' \
+	gcl='git clone' \
+	ga='git add' \
+	gd='git diff' \
+	gb='git branch' \
+	gl='git log' \
+	gsb='git show-branch' \
+	gco='git checkout' \
+	gg='git grep' \
+	gk='gitk --all' \
+	gr='git rebase' \
+	gri='git rebase --interactive' \
+	gcp='git cherry-pick' \
+	grm='git rm' \
+	gpush='git push' \
+	gpull='git pull' \
+	push='git push' \
+	pull='git pull'
+
+# lf
+alias lf='lfcd'
+
+
+# Common variations of 'ls' command
+alias \
+	ls="exa" \
+	ll="ls -l" \
+	la="ls -a" \
+	lla="ls -la" \
+	l="ls" \
+	s="ls" \
+	tree="ls -T"
+
+
+#For when you've spent too much time in DOS
+alias  cls="clear"
+
+
+# dictionary
+alias \
+	dict="dict -d gcide" \
+	def="dict"
+
+
+
+#rust alternatives
+alias \
+	pipes="pipes-rs" \
+    ls="exa"
+	#find="fd"
+	#grep="rg" \
+	#cat="bat" \
+	#ps="procs" \
+	#sed="sd" \
+	#grex
+	#du="dust" \
+
+
+
