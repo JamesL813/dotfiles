@@ -1,12 +1,6 @@
+# format = '$all'
 
-
-# Shapes                           
-#u'\uE0A2'
-
-#$username\
-
-#colors
-
+# Which is equivalent to
 format = """
 $username\
 $hostname\
@@ -15,36 +9,48 @@ $shlvl\
 $singularity\
 $kubernetes\
 $directory\
-$fill\
 $vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
 $hg_branch\
+$pijul_channel\
 $docker_context\
 $package\
-$buf\
+$c\
 $cmake\
 $cobol\
-$container\
+$daml\
 $dart\
 $deno\
 $dotnet\
 $elixir\
 $elm\
 $erlang\
+$fennel\
 $golang\
+$guix_shell\
 $haskell\
+$haxe\
 $helm\
 $java\
 $julia\
 $kotlin\
+$gradle\
 $lua\
 $nim\
 $nodejs\
 $ocaml\
+$opa\
 $perl\
 $php\
 $pulumi\
 $purescript\
 $python\
+$raku\
 $rlang\
 $red\
 $ruby\
@@ -55,8 +61,11 @@ $terraform\
 $vlang\
 $vagrant\
 $zig\
+$buf\
 $nix_shell\
 $conda\
+$meson\
+$spack\
 $memory_usage\
 $aws\
 $gcloud\
@@ -65,292 +74,169 @@ $azure\
 $env_var\
 $crystal\
 $custom\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
 $sudo\
 $cmd_duration\
+$line_break\
 $jobs\
 $battery\
+$time\
 $status\
-[\n ❯ ](fg:bright-blue)\
-$shell"""
+$os\
+$container\
+$shell\
+$character"""
 
-# A continuation prompt that displays two filled in arrows
-#continuation_prompt = ""
-
-# Disable the blank line at the start of the prompt
-add_newline = false
-
-# You can also replace your username with a neat symbol like  to save some space
-[username]
-show_always = true
-style_user = "bg:bright-blue"
-style_root = "bg:bright-blue"
-format = "[ ](fg:bright-blue)[ $user]($style)[](fg:bright-blue bg:blue)"
-# format = '[$user ]($style)'
-
-[directory]
-style = "bg:blue fg:bright-white"
-format = "[ $path]($style)[](fg:blue)"
-truncation_length = 4
-truncation_symbol = "  "
-read_only = ""
-
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[➜](bold red)" # used if previous command failed
-
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
-[directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"~" = " "
-"/" = "  "
-
-# Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
-
-[git_branch]
-symbol = " "
-style = "bg:bright-purple"
-format = '[](fg:bright-purple)[ $symbol $branch]($style)[ ](fg:purple bg:bright-purple)'
-
-[git_status]
-ahead = " ${count}"
-diverged = " ${ahead_count}  ${behind_count}"
-behind = " ${count}"
-up_to_date = ""
-style = "bg:purple"
-format = '[[($all_status$ahead_behind)](bg:purple)]($style)[ ](fg:purple)'
-
-[cmd_duration]
-style = "bg:blue"
-format = '[](fg:blue)[⏱ $duration ]($style)[ ](fg:blue)'
-
-[fill]
-symbol = " "
-style = "black"
-
-[battery]
-full_symbol = " "
-charging_symbol = " "
-discharging_symbol = " "
-
-[nodejs]
-symbol = ""
-style = "bg:blue"
-format = '[](fg:blue)[ $symbol ]($style)[ ](fg:blue)'
-
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:black fg:bright-white"
-format = '[](fg:black)[ $time ]($style)[ ](fg:black)'
 
 [aws]
 symbol = "  "
-format = '[$symbol($profile)(\($region\))($duration)]($style)'
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
 
 [conda]
-style = "bg:#33658A"
-format = '[$symbol$environment]($style)'
 symbol = " "
 
 [dart]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
 symbol = " "
 
+[directory]
+read_only = " "
+truncation_length = 4
+truncation_symbol = '…/'
+
 [docker_context]
-style = "bg:#33658A"
-format = '[$symbol$context]($style)'
 symbol = " "
 
 [elixir]
-style = "bg:#33658A"
-format = '[$symbol($version \(OTP $otp_version\))]($style)'
 symbol = " "
 
 [elm]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
 symbol = " "
 
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[git_status]
+ahead = "${count}󰁜 "
+diverged = "${ahead_count}󰁜  ${behind_count}󰁂"
+behind = "${count}󰁂 "
+up_to_date = ""
+untracked="${count} "
+deleted = "${count}󱘹 "
+staged="${count}󰁜󰁜  "
+stashed="${count}󰀼 "
+modified="${count} "
+renamed="${count}󰓹 "
+
 [golang]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
 symbol = " "
 
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
 [hg_branch]
-style = "bg:#33658A"
-format = '[$symbol$branch]($style)'
 symbol = " "
 
 [java]
-style = "bg:bright-red"
-format = '[](fg:bright-red)[$symbol $version]($style)[ ](fg:bright-red)'
-symbol = " "
+symbol = " "
 
 [julia]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
 symbol = " "
 
+[lua]
+symbol = " "
+
 [memory_usage]
-style = "bg:#33658A"
-format = '$symbol[$ram( | $swap)]($style)'
 symbol = " "
 
+[meson]
+symbol = "喝 "
+
 [nim]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
 symbol = " "
 
 [nix_shell]
-style = "bg:#33658A"
-format = '[$symbol$state( \($name\))]($style)'
-symbol = " "
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os]
+format = "[$symbol ]($style)"
+style = "bold blue"
+disabled = false
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
 
 [package]
-style = "bg:#33658A"
-format = '[](fg:#33658A)[$symbol $version]($style)[ ](fg:#33658A)'
 symbol = " "
 
-[cmake]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[cobol]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[crystal]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[deno]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[dotnet]
-style = "bg:#33658A"
-format = '[$symbol(🎯 $tfm)]($style)'
-
-[erlang]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[gcloud]
-style = "bg:#33658A"
-format = '[$symbol$account(@$domain)(\($region\))]($style)'
-
-[helm]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[jobs]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[kotlin]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[kubernetes]
-style = "bg:#33658A"
-format = '[$symbol$context( \($namespace\))]($style)'
-
-[lua]
-style = "bg:blue"
-format = '[](fg:blue)[$symbol $version]($style)[ ](fg:blue)'
-
-[ocaml]
-style = "bg:#33658A"
-format = '[$symbol(\($switch_indicator$switch_name\))]($style)'
-
-[openstack]
-style = "bg:#33658A"
-format = '[$symbol$cloud(\($project\))]($style)'
-
-[perl]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[php]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[pulumi]
-style = "bg:#33658A"
-format = '[$symbol$stack]($style)'
-
-[purescript]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
+[pijul_channel]
+symbol = "🪺 "
 
 [python]
-symbol = ""
-style = "bg:blue fg:bright-yellow"
-format = '[](fg:blue)[${symbol} ${pyenv_prefix}(${version})(\($virtualenv\))]($style)[ ](fg:blue)'
-
-[red]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
+symbol = " "
 
 [rlang]
-symbol = "R "
-style = "bg:blue"
-format = '[](fg:blue)[$symbol $version]($style)[ ](fg:blue)'
+symbol = "ﳒ "
 
 [ruby]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
+symbol = " "
 
 [rust]
-symbol = ""
-style = "bg:yellow"
-format = '[](fg:yellow)[$symbol $version]($style)[ ](fg:yellow)'
+symbol = " "
 
 [scala]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
+symbol = " "
 
-[status]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[sudo]
-style = "bg:#33658A"
-format = '[as $symbol]'
-
-[swift]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[terraform]
-style = "bg:#33658A"
-format = '[$symbol$workspace]($style)'
-
-[vagrant]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[vlang]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
-[zig]
-style = "bg:#33658A"
-format = '[$symbol]($style)'
-
+[spack]
+symbol = "🅢 "
 
