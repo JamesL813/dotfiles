@@ -2,6 +2,7 @@
 
 # Which is equivalent to
 format = """
+$os\
 $username\
 $hostname\
 $localip\
@@ -74,6 +75,7 @@ $azure\
 $env_var\
 $crystal\
 $custom\
+$fill\
 $sudo\
 $cmd_duration\
 $line_break\
@@ -81,7 +83,6 @@ $jobs\
 $battery\
 $time\
 $status\
-$os\
 $container\
 $shell\
 $character"""
@@ -96,6 +97,13 @@ symbol = " "
 [c]
 symbol = " "
 
+# ~/.config/starship.toml
+
+[cmd_duration]
+min_time = 2000
+format = '[󱎫 $duration]($style)'
+
+
 [conda]
 symbol = " "
 
@@ -107,6 +115,15 @@ read_only = " "
 truncation_length = 4
 truncation_symbol = '…/'
 
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = "󰇚 "
+"Games"="󰮂"
+"Music" = "󰝚 "
+"Pictures" = "󰋩 "
+"Projects" = "󱃖 "
+"~" = "󰋜 "
+
 [docker_context]
 symbol = " "
 
@@ -115,6 +132,10 @@ symbol = " "
 
 [elm]
 symbol = " "
+
+[fill]
+symbol=" "
+style=""
 
 [fossil_branch]
 symbol = " "
@@ -137,6 +158,7 @@ renamed="${count}󰓹 "
 
 [golang]
 symbol = " "
+format='󰁔 [$symbol($version )]($style)'
 
 [guix_shell]
 symbol = " "
@@ -151,13 +173,20 @@ symbol = "⌘ "
 symbol = " "
 
 [java]
-symbol = " "
+symbol = "󰅶 "
+format='󰁔 [$symbol($version )]($style)'
 
 [julia]
 symbol = " "
+format='󰁔 [$symbol($version )]($style)'
+
+[kotlin]
+symbol = "󱈙 "
+format='󰁔 [$symbol($version )]($style)'
 
 [lua]
 symbol = " "
+format='󰁔 [$symbol($version )]($style)'
 
 [memory_usage]
 symbol = " "
@@ -173,6 +202,7 @@ symbol = " "
 
 [nodejs]
 symbol = " "
+format='󰁔 [$symbol($version )]($style)'
 
 [os]
 format = "[$symbol ]($style)"
@@ -195,7 +225,7 @@ Garuda = "﯑ "
 Gentoo = " "
 HardenedBSD = "ﲊ "
 Illumos = " "
-Linux = " "
+Linux = " "
 Macos = " "
 Manjaro = " "
 Mariner = " "
@@ -219,24 +249,31 @@ Windows = " "
 
 [package]
 symbol = " "
+format = '󰁔 [$symbol$version]($style) '
 
 [pijul_channel]
 symbol = "🪺 "
 
 [python]
-symbol = " "
+symbol = " "
+format='󰁔 [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [rlang]
-symbol = "ﳒ "
+symbol = " "
+format='󰁔 [$symbol($version )]($style)'
 
 [ruby]
-symbol = " "
+symbol = " "
+format='󰁔 [$symbol($version )]($style)'
 
 [rust]
-symbol = " "
+symbol = " " # 󰒓🦀
+format='󰁔 [$symbol($version )]($style)'
+style = 'red'
 
 [scala]
 symbol = " "
+format='󰁔 [$symbol($version )]($style)'
 
 [spack]
 symbol = "🅢 "

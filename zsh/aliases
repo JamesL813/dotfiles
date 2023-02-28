@@ -40,7 +40,6 @@ alias \
 	hx="helix"
 
 
-
 # Git related
 alias  \
 	gi='git init' \
@@ -63,6 +62,7 @@ alias  \
 	gpull='git pull' \
 	push='git push' \
 	pull='git pull'
+
 
 # lf
 alias lf='lfcd'
@@ -87,7 +87,6 @@ alias  cls="clear"
 alias \
 	dict="dict -d gcide" \
 	def="dict"
-
 
 
 #rust alternatives
