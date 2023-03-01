@@ -1,4 +1,4 @@
-# Luke's config for the Zoomer Shell
+#!/bin/sh
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -10,23 +10,27 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
+[ -f "$XDG_CONFIG_HOME/zsh/options" ] && source "$XDG_CONFIG_HOME/zsh/options"
 autoload -U compinit
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/"
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
+# # vi mode
+# bindkey -v
+# export KEYTIMEOUT=1
+# 
+# # Use vim keys in tab complete menu:
+# bindkey -M menuselect 'h' vi-backward-char
+# bindkey -M menuselect 'k' vi-up-line-or-history
+# bindkey -M menuselect 'l' vi-forward-char
+# bindkey -M menuselect 'j' vi-down-line-or-history
+# bindkey -v '^?' backward-delete-char
+# 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
@@ -68,7 +72,6 @@ bindkey '^e' edit-command-line
 # Load aliases and shortcuts if existent.
 [ -f "$XDG_CONFIG_HOME/zsh/aliases" ] && source "$XDG_CONFIG_HOME/zsh/aliases"
 [ -f "$XDG_CONFIG_HOME/zsh/keybinds" ] && source "$XDG_CONFIG_HOME/zsh/keybinds"
-[ -f "$XDG_CONFIG_HOME/zsh/options" ] && source "$XDG_CONFIG_HOME/zsh/options"
 
 # starship
 function set_win_title(){

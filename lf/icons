@@ -20,39 +20,25 @@
 # fi      -       # FILE
 
 # file types (with matching order)
-ln             # LINK
-or             # ORPHAN
+ln      󰁕       # LINK
+or      󰪹       # ORPHAN
 tw      t       # STICKY_OTHER_WRITABLE
-<<<<<<< HEAD
-ow             # OTHER_WRITABLE
+ow      󰉋       # OTHER_WRITABLE
 st      t       # STICKY
-di             # DIR
-=======
-ow             # OTHER_WRITABLE
-st      t       # STICKY
-di             # DIR
->>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
+di      󰉋       # DIR
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
 cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
-<<<<<<< HEAD
-ex      異      # EXEC
-fi             # FILE
-=======
-ex             # EXEC
-fi             # FILE
->>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
+ex      󱓞       # EXEC
+fi      󰈔       # FILE
 
 # file extensions (vim-devicons)
 *.styl          
 *.sass          
 *.scss          
-*.csv			離
-*.ods			離
-*.xlsx			離
 *.htm           
 *.html          
 *.slim          
@@ -60,10 +46,12 @@ fi             # FILE
 *.ejs           
 *.css           
 *.less          
-*.md            
-*.mdx           
-*.markdown      
-*.rmd           
+*.md            󰍔
+*.mdx           󰍔
+*.markdown      󰍔
+*.rmd           󰍔
+*.tex           󰊄
+*.sty           󰊄
 *.json          
 *.webmanifest   
 *.js            
@@ -77,6 +65,10 @@ fi             # FILE
 *.pyc           
 *.pyo           
 *.pyd           
+*.godot         
+*.gd            
+*.tscn          
+*.tres          
 *.coffee        
 *.mustache      
 *.hbs           
@@ -87,23 +79,13 @@ fi             # FILE
 *.toml          
 *.bat           
 *.mk            
-<<<<<<< HEAD
-*.jpg           
-*.jpeg          
-*.bmp           
-*.png           
-*.webp          
-*.gif           
-*.ico           
-=======
-*.jpg           
-*.jpeg          
-*.bmp           
-*.png           
-*.webp          
-*.gif           
-*.ico           
->>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
+*.jpg           󰋩
+*.jpeg          󰋩
+*.bmp           󰋩
+*.png           󰋩
+*.webp          󰋩
+*.gif           󰋩
+*.ico           󰋩
 *.twig          
 *.cpp           
 *.c++           
@@ -120,7 +102,7 @@ fi             # FILE
 *.lhs           
 *.nix           
 *.lua           
-*.java          
+*.java          󰅶
 *.sh            
 *.fish          
 *.bash          
@@ -154,8 +136,8 @@ fi             # FILE
 *.fsx           
 *.fs            
 *.fsi           
-*.rs            
-*.rlib          
+*.rs            
+*.rlib          
 *.d             
 *.erl           
 *.hrl           
@@ -206,12 +188,12 @@ fi             # FILE
 *_gvimrc                
 *.bashprofile           
 *favicon.ico            
-*license                
+*license                󰌆
 *node_modules           
-*react.jsx              
+*react.jsx              󰜈
 *procfile               
-*dockerfile             
-*docker-compose.yml     
+*dockerfile             󰡨
+*docker-compose.yml     󰡨
 *rakefile               
 *config.ru              
 *gemfile                
@@ -228,11 +210,11 @@ fi             # FILE
 *Gulpfile.ls            
 *Dropbox                
 *.DS_Store              
-*LICENSE                
+*LICENSE                󰌆
 *React.jsx              
 *Procfile               
-*Dockerfile             
-*Docker-compose.yml     
+*Dockerfile             󰡨
+*Docker-compose.yml     󰡨
 *Rakefile               
 *Gemfile                
 *Makefile               
@@ -261,238 +243,139 @@ fi             # FILE
 Vagrantfile             
 
 # archives or compressed (extensions from dircolors defaults)
-*.tar   遲
-<<<<<<< HEAD
-*.tgz   遲
-*.arc   遲
-*.arj   遲
-*.taz   遲
-*.lha   遲
-*.lz4   遲
-*.lzh   遲
-*.lzma  遲
-*.tlz   遲
-*.txz   遲
-*.tzo   遲
-*.t7z   遲
-*.zip   遲
-*.z     遲
-*.dz    遲
-*.gz    遲
-*.lrz   遲
-*.lz    遲
-*.lzo   遲
-*.xz    遲
-*.zst   遲
-*.tzst  遲
-*.bz2   遲
-*.bz    遲
-*.tbz   遲
-*.tbz2  遲
-*.tz    遲
-*.deb   遲
-*.rpm   遲
-*.jar   遲
-*.war   遲
-*.ear   遲
-*.sar   遲
-*.rar   遲
-*.alz   遲
-*.ace   遲
-*.zoo   遲
-*.cpio  遲
-*.7z    遲
-*.rz    遲
-*.cab   遲
-*.wim   遲
-*.swm   遲
-*.dwm   遲
-*.esd   遲
+*.tar   󰗄
+*.tgz   󰗄
+*.arc   󰗄
+*.arj   󰗄
+*.taz   󰗄
+*.lha   󰗄
+*.lz4   󰗄
+*.lzh   󰗄
+*.lzma  󰗄
+*.tlz   󰗄
+*.txz   󰗄
+*.tzo   󰗄
+*.t7z   󰗄
+*.zip   󰗄
+*.z     󰗄
+*.dz    󰗄
+*.gz    󰗄
+*.lrz   󰗄
+*.lz    󰗄
+*.lzo   󰗄
+*.xz    󰗄
+*.zst   󰗄
+*.tzst  󰗄
+*.bz2   󰗄
+*.bz    󰗄
+*.tbz   󰗄
+*.tbz2  󰗄
+*.tz    󰗄
+*.deb   󰗄
+*.rpm   󰗄
+*.jar   󰗄
+*.war   󰗄
+*.ear   󰗄
+*.sar   󰗄
+*.rar   󰗄
+*.alz   󰗄
+*.ace   󰗄
+*.zoo   󰗄
+*.cpio  󰗄
+*.7z    󰗄
+*.rz    󰗄
+*.cab   󰗄
+*.wim   󰗄
+*.swm   󰗄
+*.dwm   󰗄
+*.esd   󰗄
 
 # image formats (extensions from dircolors defaults)
-*.jpg   
-*.jpeg  
-*.mjpg  
-*.mjpeg 
-*.gif   
-*.bmp   
-*.pbm   
-*.pgm   
-*.ppm   
-*.tga   
-*.xbm   
-*.xpm   
-*.tif   
-*.tiff  
-*.png   
-*.svg   
-*.svgz  
-*.mng   
-*.pcx   
-*.mov   
-*.mpg   
-*.mpeg  
-*.m2v   
-*.mkv   
-*.webm  
-*.ogm   
-*.mp4   
-*.m4v   
-*.mp4v  
-*.vob   
-*.qt    
-*.nuv   
-*.wmv   
-*.asf   
-*.rm    
-*.rmvb  
-*.flc   
-*.avi   
-*.fli   
-*.flv   
-*.gl    
-*.dl    
-*.xcf   
-*.xwd   
-*.yuv   
-*.cgm   
-*.emf   
-*.ogv   
-*.ogx   
+*.jpg   󰋩
+*.jpeg  󰋩
+*.mjpg  󰋩
+*.mjpeg 󰋩
+*.gif   󰕧
+*.bmp   󰋩
+*.pbm   󰋩
+*.pgm   󰋩
+*.ppm   󰋩
+*.tga   󰋩
+*.xbm   󰋩
+*.xpm   󰋩
+*.tif   󰋩
+*.tiff  󰋩
+*.png   󰋩
+*.svg   󰋩
+*.svgz  󰋩
+*.mng   󰕧
+*.pcx   󰋩
+*.mov   󰕧
+*.mpg   󰕧
+*.mpeg  󰕧
+*.m2v   󰕧
+*.mkv   󰕧
+*.webm  󰕧
+*.ogm   󰋩
+*.mp4   󰕧
+*.m4v   󰕧
+*.mp4v  󰕧
+*.vob   󰕧
+*.qt    󰕧
+*.nuv   󰋩
+*.wmv   󰕧
+*.asf   󰕧
+*.rm    󰕧
+*.rmvb  󰕧
+*.flc   󰋩
+*.avi   󰕧
+*.fli   󰋩
+*.flv   󰕧
+*.gl    󰋩
+*.dl    󰋩
+*.xcf   󰋩
+*.xwd   󰋩
+*.yuv   󰕧
+*.cgm   󰋩
+*.emf   󰋩
+*.ogv   󰕧
+*.ogx   󰋩
 
 # audio formats (extensions from dircolors defaults)
-*.aac   
-*.au    
-*.flac  
-*.m4a   
-*.mid   
-*.midi  
-*.mka   
-*.mp3   
-*.mpc   
-*.ogg   
-*.ra    
-*.wav   
-*.oga   
-*.opus  
-*.spx   
-*.xspf  
-=======
-*.tgz   
-*.arc   
-*.arj   
-*.taz   
-*.lha   
-*.lz4   
-*.lzh   
-*.lzma  
-*.tlz   
-*.txz   
-*.tzo   
-*.t7z   
-*.zip   遲
-*.z     
-*.dz    
-*.gz    
-*.lrz   
-*.lz    
-*.lzo   
-*.xz    
-*.zst   
-*.tzst  
-*.bz2   
-*.bz    
-*.tbz   
-*.tbz2  
-*.tz    
-*.deb   
-*.rpm   
-*.jar   
-*.war   
-*.ear   
-*.sar   
-*.rar   
-*.alz   
-*.ace   
-*.zoo   
-*.cpio  
-*.7z    
-*.rz    
-*.cab   
-*.wim   
-*.swm   
-*.dwm   
-*.esd   
+*.aac   󰝚
+*.au    󰝚
+*.flac  󰝚
+*.m4a   󰝚
+*.mid   󰝚
+*.midi  󰝚
+*.mka   󰝚
+*.mp3   󰝚
+*.mpc   󰝚
+*.ogg   󰝚
+*.ra    󰝚
+*.wav   󰝚
+*.oga   󰝚
+*.opus  󰝚
+*.spx   󰝚
+*.xspf  󰝚
 
-# image formats (extensions from dircolors defaults)
-*.jpg   
-*.jpeg  
-*.mjpg  
-*.mjpeg 
-*.gif   
-*.bmp   
-*.pbm   
-*.pgm   
-*.ppm   
-*.tga   
-*.xbm   
-*.xpm   
-*.tif   
-*.tiff  
-*.png   
-*.svg   
-*.svgz  
-*.mng   
-*.pcx   
-*.mov   
-*.mpg   
-*.mpeg  
-*.m2v   
-*.mkv   
-*.webm  
-*.ogm   
-*.mp4   
-*.m4v   
-*.mp4v  
-*.vob   
-*.qt    
-*.nuv   
-*.wmv   
-*.asf   
-*.rm    
-*.rmvb  
-*.flc   
-*.avi   
-*.fli   
-*.flv   
-*.gl    
-*.dl    
-*.xcf   
-*.xwd   
-*.yuv   
-*.cgm   
-*.emf   
-*.ogv   
-*.ogx   
-
-# audio formats (extensions from dircolors defaults)
-*.aac   
-*.au    
-*.flac  
-*.m4a   
-*.mid   
-*.midi  
-*.mka   
-*.mp3   
-*.mpc   
-*.ogg   
-*.ra    
-*.wav   
-*.oga   
-*.opus  
-*.spx   
-*.xspf  
->>>>>>> d72de430a0772edeb3287f3a8ee5eff88e4f6fdc
+# document
+*.odt   󰈙
+*.docx  󰈙
+*.doc   󰈙
+*.ods   󰈕
+*.xlsx  󰈕
+*.xls   󰈕
+*.odp   󰐨
+*.ppt   󰐨
+*.pptx  󰐨
 
 # other formats
-*.pdf   
+*.csv   󰓫
+*.pdf   󰈙
+*.log   󰯁
+*.m     󰱐
+*.txt   󰦨
+*.xopp  󰏪
+*.ttf   
+*.otf   

@@ -13,6 +13,8 @@ cd $XDG_CONFIG_HOME
 rm -rf zsh
 ln -s dotfiles/zsh zsh
 
+mkdir -p $XDG_CACHE_HOME/zsh
+
 # lf
 rm -rf lf
 ln -s dotfiles/lf lf

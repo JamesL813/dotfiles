@@ -78,7 +78,7 @@ highlights:
   SpellRare: 'purple - u'
   NormalNC: 'fg bg'
   Pmenu: 'light_gray tree_gray'
-  PmenuSel: '- ui2_blue'
+  PmenuSel: '- ui3_blue'
   WildMenu: 'fg ui2_blue'
   CursorLineNr: 'light_gray - b'
   Comment: 'gray - i'
