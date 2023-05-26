@@ -73,6 +73,33 @@ bindkey '^e' edit-command-line
 [ -f "$XDG_CONFIG_HOME/zsh/aliases" ] && source "$XDG_CONFIG_HOME/zsh/aliases"
 [ -f "$XDG_CONFIG_HOME/zsh/keybinds" ] && source "$XDG_CONFIG_HOME/zsh/keybinds"
 
+
+# joshuto
+function joshuto() {
+	ID="$$"
+	mkdir -p /tmp/$USER
+	OUTPUT_FILE="/tmp/$USER/joshuto-cwd-$ID"
+	env joshuto --output-file "$OUTPUT_FILE" $@
+	exit_code=$?
+
+	case "$exit_code" in
+		# regular exit
+		0)
+			;;
+		# output contains current directory
+		101)
+			JOSHUTO_CWD=$(cat "$OUTPUT_FILE")
+			cd "$JOSHUTO_CWD"
+			;;
+		# output selected files
+		102)
+			;;
+		*)
+			echo "Exit code: $exit_code"
+			;;
+	esac
+}
+
 # starship
 function set_win_title(){
     echo -ne "\033]0; $(basename "$PWD") \007"

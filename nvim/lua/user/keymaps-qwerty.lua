@@ -17,15 +17,15 @@ keymap("n", "<A-j>", "<C-w>j", opts)
 keymap("n", "<A-k>", "<C-w>k", opts)
 keymap("n", "<A-l>", "<C-w>l", opts)
 
-keymap("n", "H", "b", opts) -- jump to first non-whitespace character of a line
-keymap("n", "J", "}", opts) -- jump down a paragraph
-keymap("n", "K", "{", opts) -- jump up a paragraph'
-keymap("n", "L", "w", opts) -- jump to the end of a line
-
-keymap("n", "<C-h>", "^", opts) --  jump to first non-whitespace character of a line
+keymap("n", "<C-h>", "b", opts) -- jump to first non-whitespace character of a line
 keymap("n", "<C-j>", "<C-d>", opts) --  jump down a paragraph
 keymap("n", "<C-k>", "<C-u>", opts) -- jump up a paragraph
-keymap("n", "<C-l>", "$", opts) -- jump to the end of a line
+keymap("n", "<C-l>", "w", opts) -- jump to the end of a line
+
+keymap("n", "H", "^", opts) --  jump to first non-whitespace character of a line
+keymap("n", "J", "}", opts) -- jump down a paragraph
+keymap("n", "K", "{", opts) -- jump up a paragraph'
+keymap("n", "L", "$", opts) -- jump to the end of a line
 
 keymap("n", "Y", "y$", opts) -- y consistancy
 keymap("n", "U", "<C-R>", opts) -- redo is U

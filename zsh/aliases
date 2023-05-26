@@ -29,12 +29,14 @@ alias \
 alias \
 	ka="killall" \
 	g="git" \
-	trem="transmission-remote" \
-	YT="youtube-viewer" \
 	e="$EDITOR" \
 	v="$EDITOR" \
+	nv="nvim" \
+    f="joshuto"\
 	p="pacman" \
 	py="python" \
+	scim="sc-im" \
+	sc="sc-im" \
 	yay="paru" \
 	ffetch="fastfetch" \
 	hx="helix"
@@ -101,5 +103,6 @@ alias \
 	#grex
 	#du="dust" \
 
+alias myip="curl ifconfig.me"
 
 

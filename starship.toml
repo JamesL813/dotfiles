@@ -2,8 +2,8 @@
 
 # Which is equivalent to
 format = """
-$os\
 $username\
+$os\
 $hostname\
 $localip\
 $shlvl\

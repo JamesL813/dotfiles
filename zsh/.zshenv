@@ -18,14 +18,20 @@ export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
 export GOPATH="$XDG_DATA_HOME"/go
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
+
 export TODO_DIR="$XDG_DATA_HOME"/todo
 export TODO_FILE="$TODO_DIR"/todo.txt
 export DONE_FILE="$TODO_DIR"/done.txt
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+
 export CARGO_HOME=$XDG_DATA_HOME'/cargo'
 #export _JAVA_OPTIONS=-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME'/java'
 export LEIN_HOME="$XDG_DATA_HOME"/lein
+
+export DOOMWADDIR="$HOME"/Games/doom
+
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 #export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 #alias wget = 'wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'

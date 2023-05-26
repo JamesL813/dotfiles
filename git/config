@@ -3,3 +3,5 @@
 	name = James Lawton
 [init]
 	defaultBranch = main
+[safe]
+	directory = /usr/share/icons/JamWaita

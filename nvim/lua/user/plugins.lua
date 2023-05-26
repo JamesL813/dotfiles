@@ -49,7 +49,10 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua") --, commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" })
 	use("akinsho/bufferline.nvim") --, commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" })
 	use("moll/vim-bbye") --, commit = "25ef93ac5a87526111f43e5110675032dbcacf56" })
-	use("nvim-lualine/lualine.nvim") -- , commit = "a52f078026b27694d2290e34efa61a6e4a690621" }
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
 	use("akinsho/toggleterm.nvim") --, commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" })
 	use("ahmedkhalf/project.nvim") --, commit = "628de7e433dd503e782831fe150bb750e56e55d6" })
 	use("lewis6991/impatient.nvim") --, commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" })
@@ -89,6 +92,29 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") --, commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
 	use("RRethy/vim-illuminate") --, commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 	use("j-hui/fidget.nvim")
+	-- use("SeniorMars/typst.nvim")
+	-- use("SeniorMars/tree-sitter-typst")
+	use({ "kaarmu/typst.vim", ft = { "typst" } })
+	use({
+		"cameron-wags/rainbow_csv.nvim",
+		config = function()
+			require("rainbow_csv").setup()
+		end,
+		-- optional lazy-loading below
+		module = {
+			"rainbow_csv",
+			"rainbow_csv.fns",
+		},
+		ft = {
+			"csv",
+			"tsv",
+			"csv_semicolon",
+			"csv_whitespace",
+			"csv_pipe",
+			"rfc_csv",
+			"rfc_semicolon",
+		},
+	})
 
 	-- Telescope --
 	use("nvim-telescope/telescope.nvim") --, commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
@@ -96,17 +122,18 @@ return packer.startup(function(use)
 	-- Treesitter --
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+		run = ":TSUpdate",
+		-- commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
 	})
 
 	-- Git
 	use("lewis6991/gitsigns.nvim") --, commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" })
 
-  -- Dumb stuff
-  use("tamton-aquib/duck.nvim")
-  use("Eandrju/cellular-automaton.nvim")
-	
-  -- Automatically set up your configuration after cloning packer.nvim
+	-- Dumb stuff
+	use("tamton-aquib/duck.nvim")
+	use("Eandrju/cellular-automaton.nvim")
+
+	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
