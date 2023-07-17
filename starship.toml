@@ -91,6 +91,11 @@ $character"""
 [aws]
 symbol = "  "
 
+[battery]
+full_symbol = '󰁹 '
+charging_symbol = '󰂄 '
+discharging_symbol = '󰂃 '
+
 [buf]
 symbol = " "
 
@@ -101,7 +106,7 @@ symbol = " "
 
 [cmd_duration]
 min_time = 2000
-format = '[󱎫 $duration]($style)'
+format = ' [󱎫 $duration]($style)'
 
 
 [conda]
